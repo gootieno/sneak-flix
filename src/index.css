@@ -37,3 +37,52 @@
 .footer-container__buttons {
 	padding: 10px, 0px;
 }
+
+.navbar-container {
+	display: flex;
+	justify-content: space-between;
+	padding: 0px, 10px;
+}
+
+.navbar-container__left-links {
+	padding: 10px;
+	padding-left: 60px;
+}
+
+.navbar-container__left-links span {
+	padding: 10px;
+	padding-right: 40px;
+}
+
+.navbar-container__right-search-profile {
+	padding-top: 15px;
+	padding-right: 60px;
+}
+
+.navbar-container__search {
+	padding-right: 10px;
+}
+
+.navbar-container__navs {
+	padding-right: 10px;
+}
+
+.playlist-container {
+	padding-left: 75px;
+}
+
+img.playlist-container__box {
+	height: 500px;
+	width: 100px;
+}
+
+div.playlist-container div {
+	overflow: auto;
+	display: inline-block;
+	color: blue;
+	padding-right: 5px;
+}
+
+.active {
+	font-weight: bold;
+}
