@@ -6,6 +6,8 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
 import Browse from './components/Browse';
+import Movies from './components/Movies';
+import TvShows from './components/TvShows';
 
 const Root = () => {
 	return (
@@ -13,6 +15,8 @@ const Root = () => {
 			<Switch>
 				<Route exact path='/' component={App} />
 				<Route path='/browse' component={Browse} />
+				<Route path='/movies' component={Movies} />
+				<Route path='/tv-shows' component={TvShows} />
 			</Switch>
 		</BrowserRouter>
 	);

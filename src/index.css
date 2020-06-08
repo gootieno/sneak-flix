@@ -69,6 +69,7 @@
 
 .playlist-container {
 	padding-left: 75px;
+	padding-top: 50px;
 }
 
 img.playlist-container__box {
@@ -85,4 +86,14 @@ div.playlist-container div {
 
 .active {
 	font-weight: bold;
+}
+
+.playlist-container__video {
+	border: 1px solid black;
+	margin-right: 10px;
+}
+
+.category-title {
+	padding-left: 80px;
+	padding-top: 20px;
 }
