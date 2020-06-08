@@ -1,1 +1,39 @@
 /* TODO Add site wide styles */
+.header-container {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 20px;
+	margin: 0px 60px 0px 60px;
+}
+
+.body-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	display: grid;
+	grid-template-rows: 1.5fr 1fr;
+	padding-top: 140px;
+}
+
+.body-container__title {
+	padding-bottom: 15px;
+}
+
+.body-container__signup-message {
+	text-align: center;
+}
+
+.body-container__signup-form {
+	text-align: center;
+}
+
+.footer-container {
+	display: flex;
+	justify-content: center;
+	display: grid;
+	padding-top: 30px;
+}
+
+.footer-container__buttons {
+	padding: 10px, 0px;
+}
