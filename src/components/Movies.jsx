@@ -2,16 +2,14 @@ import React, { Component } from 'react';
 import NavBar from './NavBar';
 import PlaylistGrid from './PlaylistGrid';
 
-export default class Browse extends Component {
-	
+export default class Movies extends Component {
 	render() {
 		return (
 			<div>
 				<NavBar />
+				<h3 className='category-title'>Movies</h3>
 				<PlaylistGrid />
 			</div>
 		);
 	}
 }
-
-//Map videos into each category 
