@@ -1,0 +1,1 @@
+export const apiKey = process.env.REACT_APP_SNEAKFLIX_API_KEY

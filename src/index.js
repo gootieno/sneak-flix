@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './index.css';
 import App from './App';
-import 'bootstrap/dist/css/bootstrap.css';
+import { fetchMovies } from './utils/apiUtil';
 import 'font-awesome/css/font-awesome.css';
 import Browse from './components/Browse';
 import Movies from './components/Movies';

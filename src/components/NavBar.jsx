@@ -1,11 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import logo from '../images/sneakflix.png';
 
 export default function NavBar() {
 	return (
 		<div className='navbar-container'>
 			<nav className='navbar-container__left-links'>
-				<span>SNEAKFLIX</span>
+				<span>
+					<img src={logo} alt='logo' />
+				</span>
 				<NavLink className='navbar-container__navs' to='/browse'>
 					Home
 				</NavLink>
