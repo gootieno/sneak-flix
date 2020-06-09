@@ -3,6 +3,7 @@ import NavBar from './NavBar';
 import PlaylistGrid from './PlaylistGrid';
 
 export default class Browse extends Component {
+	
 	render() {
 		return (
 			<div>
@@ -12,3 +13,5 @@ export default class Browse extends Component {
 		);
 	}
 }
+
+//Map videos into each category 

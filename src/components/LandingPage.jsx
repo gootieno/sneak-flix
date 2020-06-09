@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import logo from '../images/sneakflix.png';
 //only data needed is email address for try it now
 // should render the landingpageheader, landingpagebody, landingpagebottom
 
@@ -12,10 +12,12 @@ export default class LandingPage extends Component {
 		return (
 			<div>
 				<header className='header-container'>
-					<p className='header-container__logo'>logo goes here</p>
+					<span>
+						<img src={logo} alt='logo' />
+					</span>
 					<button className='header-container__signin'>Sign In</button>
 				</header>
-				<body className='body-container'>
+				<div className='body-container'>
 					<h1 className='body-container__title'>
 						A sneak peak of upcoming movies
 					</h1>
@@ -27,7 +29,7 @@ export default class LandingPage extends Component {
 						<button className='body-container__try-it-now'>TRY IT NOW ></button>
 						<p>Ready to watch? Enter email address to sign up!</p>
 					</form>
-				</body>
+				</div>
 				<footer className='footer-container'>
 					<h2 className='footer-container_faq'>Frequently Asked Questions</h2>
 					<button className='footer-container__buttons'>
