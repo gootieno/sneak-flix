@@ -14,14 +14,20 @@ import {
 	movieAdded,
 } from './store/reducers/movies';
 
+import {
+	showAdded,
+	getActionShows,
+	getComedyShows,
+} from './store/reducers/tvShows';
+
 const store = configureStore();
 store.dispatch(movieAdded({ id: 1, title: 'Inception', genre: 'action' }));
-store.dispatch(movieAdded({ id: 2, title: 'Hang Over', genre: 'comedy' }));
+store.dispatch(showAdded({ id: 1, title: 'The Office', genre: 'comedy' }));
 console.log(store.getState());
 
 const comedyMovies = getComedyMovies(store.getState());
-const actionMovies = getActionMovies(store.getState());
-console.log('action movies: ', actionMovies);
+const comedyShows = getComedyShows(store.getState());
+console.log('comedy shows: ', comedyShows);
 console.log('comedy movies: ', comedyMovies);
 
 const Root = () => {

@@ -19,7 +19,7 @@ export const moviesReducer = (state = {}, action) => {
 //selector functions
 export const getActionMovies = (state) => {
 	let movies = Object.values(state.entities.movies).filter(
-		(m) => m.genre === 'action'
+		(movie) => movie.genre === 'action'
 	);
 	return movies;
 	// if (state.entities.movies.genre === 'action') return state.entities.movies;
@@ -28,11 +28,15 @@ export const getActionMovies = (state) => {
 export const getComedyMovies = (state) => {
 	// if (state.entities.movies.genre === 'comedy') return state.entities.movies;
 	let movies = Object.values(state.entities.movies).filter(
-		(m) => m.genre === 'comedy'
+		(movie) => movie.genre === 'comedy'
 	);
 	return movies;
 };
 
 export const getDramaMovies = (state) => {
-	if (state.entities.movies.genre === 'drama') return state.entities.movies;
+	let movies = Object.values(state.entities.movies).filter(
+		(movie) => movie.genre === 'drama'
+	);
+	return movies;
+	// if (state.entities.movies.genre === 'drama') return state.entities.movies;
 };
