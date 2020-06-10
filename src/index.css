@@ -97,3 +97,8 @@ div.playlist-container div {
 	padding-left: 80px;
 	padding-top: 20px;
 }
+
+iframe #iframe {
+	display: block;
+	width: 100%;
+}

@@ -8,9 +8,7 @@ export default function PlaylistGrid() {
 				<source type='video/mp4' src='../videos/small.mp4' />
 			</video>
 			<h3>Trending Now</h3>
-			<div className='playlist-container__trending-now'>
-				<VideoBox />
-			</div>
+
 			<h3>Action</h3>
 			<div className='playlist-container__action'>
 				<VideoBox />
