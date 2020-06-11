@@ -7,6 +7,10 @@ import 'font-awesome/css/font-awesome.css';
 import Browse from './components/Browse';
 import Movies from './components/Movies';
 import TvShows from './components/TvShows';
+
+
+
+
 import configureStore from './store/configureStore';
 import {
 	getComedyMovies,
@@ -29,6 +33,14 @@ const comedyMovies = getComedyMovies(store.getState());
 const comedyShows = getComedyShows(store.getState());
 console.log('comedy shows: ', comedyShows);
 console.log('comedy movies: ', comedyMovies);
+
+
+
+
+
+
+
+
 
 const Root = () => {
 	return (
