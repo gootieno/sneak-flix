@@ -1,6 +1,0 @@
-#!/usr/bin/env node
-
-const app = require('../app');
-const { port } = require('../config');
-
-app.listen(port, () => console.log(`Listening on port ${port}...`));
