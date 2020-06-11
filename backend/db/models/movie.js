@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
 			genre: DataTypes.STRING,
 			description: DataTypes.STRING,
 			length: DataTypes.STRING,
+			videoSource: DataTypes.STRING,
 		},
 		{}
 	);
