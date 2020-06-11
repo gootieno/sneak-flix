@@ -24,7 +24,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING(10)
       },
-      videoSource:{
+      source:{
         allowNull: false,
         type: Sequelize.STRING
       },

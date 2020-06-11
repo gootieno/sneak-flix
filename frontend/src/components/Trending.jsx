@@ -13,7 +13,7 @@ export default class Trending extends Component {
 				>
 					<source
 						type='video/mp4'
-						src='https://sneakflix.s3-us-west-1.amazonaws.com/movies/alpha-trailer-2_h1080p.mov'
+						src='https://sneakflix.s3-us-west-1.amazonaws.com/movies/action/alpha-trailer-2_h1080p.mov'
 					/>
 				</video>
 			</div>
