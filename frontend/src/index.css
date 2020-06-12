@@ -89,16 +89,10 @@ div.playlist-container div {
 }
 
 .playlist-container__video {
-	border: 1px solid black;
 	margin-right: 10px;
 }
 
 .category-title {
 	padding-left: 80px;
 	padding-top: 20px;
-}
-
-iframe #iframe {
-	display: block;
-	width: 100%;
 }

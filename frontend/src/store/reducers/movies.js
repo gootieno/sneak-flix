@@ -3,6 +3,13 @@ export const movieAdded = (movie) => {
 	return { type: 'RECEIVE_MOVIE', movie };
 };
 
+export const receiveMovies = (movies) => {
+	return {
+		type: 'RECEIVE_MOVIES',
+		movies,
+	};
+};
+
 //Reducer
 export const moviesReducer = (state = {}, action) => {
 	let newState = Object.assign({}, state);
@@ -11,6 +18,11 @@ export const moviesReducer = (state = {}, action) => {
 			return Object.assign(newState, {
 				[action.movie.id]: action.movie,
 			});
+		case 'RECEIVE_MOVIES':
+			let nextState = {};
+			action.movies.forEach((movie) => (nextState[movie.id] = movie));
+			return Object.assign(newState, nextState);
+
 		default:
 			return state;
 	}
