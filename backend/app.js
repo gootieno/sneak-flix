@@ -1,11 +1,16 @@
 const express = require('express');
 const morgan = require('morgan');
-const routes = require('./routes/routes');
+const cors = require('cors');
+const aws = require('./routes/aws');
+const movieRouter = require('./routes/movies');
 
 const app = express();
 
+app.use(cors({ orgin: true }));
 app.use(morgan('dev'));
-app.use(routes);
+app.use(express.json());
+app.use(aws);
+app.use('/movies', movieRouter);
 
 app.use((req, res, next) => {
 	const err = new Error("The requested page couldn't be found.");

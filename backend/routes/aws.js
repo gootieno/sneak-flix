@@ -84,9 +84,4 @@ const retrieveFile = (filename, res) => {
 	});
 };
 
-//Express sequelize
-router.get('/', (req, res) => {
-	res.json({ title: 'Home' });
-});
-
 module.exports = router;

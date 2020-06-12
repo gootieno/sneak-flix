@@ -1,8 +1,9 @@
 import React from 'react';
-import VideoBox from './VideoBox';
-import Trending from './Trending';
+import Trending from './TrendingMovies';
+import ActionMovies from './ActionMovies';
+import ComedyMovies from './ComedyMovies';
 
-export default function PlaylistGrid() {
+export default function MoviePlaylistGrid() {
 	return (
 		<div className='playlist-container'>
 			<video className='playlist-container__video' width='1600' height='480'>
@@ -14,19 +15,11 @@ export default function PlaylistGrid() {
 			</div>
 			<h3>Action</h3>
 			<div className='playlist-container__action'>
-				<VideoBox />
+				<ActionMovies />
 			</div>
 			<h3>Comedy</h3>
 			<div className='playlist-container__comedy'>
-				<VideoBox />
-			</div>
-			<h3>Drama</h3>
-			<div className='playlist-container__drama'>
-				<VideoBox />
-			</div>
-			<h3>Adventure</h3>
-			<div className='playlist-container__adventure'>
-				<VideoBox />
+				<ComedyMovies />
 			</div>
 		</div>
 	);
