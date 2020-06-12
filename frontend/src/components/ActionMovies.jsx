@@ -8,42 +8,41 @@ class ActionMovies extends Component {
 		this.props.fetchMovies();
 	}
 
-	state = {
-		hover: false,
+	handleVideoMouseOver = (e) => {
+		e.target.muted = false;
+		e.target.play();
+		// document.getElementById(e.target.id).autoPlay = true;
 	};
 
-	setVideoControlAttribute = (e) => {
-		document.getElementById(e.target.id).controls = true;
-		document.getElementById(e.target.id).autoPlay = true;
-	};
-
-	removeVideoControlAttribute = (e) => {
-		document.getElementById(e.target.id).controls = false;
+	handleVideoMouseLeave = (e) => {
+		e.target.load();
 	};
 
 	render() {
 		return (
 			<div id='myCarousel' className='playlist-container' data-ride='carousel'>
 				<a
-					class='left carousel-control'
+					className='left carousel-control'
 					href='#myCarousel'
 					role='button'
 					data-slide='prev'
 				>
 					<span
-						class='glyphicon glyphicon-chevron-left'
+						className='glyphicon glyphicon-chevron-left'
 						aria-hidden='true'
 					></span>
-					<span class='sr-only'>Previous</span>
+					<span className='sr-only'>Previous</span>
 				</a>
 				{this.props.movies.map((movie, idx) => (
 					<video
+						muted={false}
+						// autoPlay={this.state.autoPlay === idx ? 'autoPlay' : ''}
 						data-target='#myCarousel'
 						data-slide-to={idx + 1}
-						onMouseOver={this.setVideoControlAttribute}
-						onMouseLeave={this.removeVideoControlAttribute}
+						onMouseOver={this.handleVideoMouseOver}
+						onMouseLeave={this.handleVideoMouseLeave}
 						poster={movie.image}
-						key={movie.id}
+						key={idx}
 						height='180'
 						width='350'
 						id={movie.id}
@@ -53,16 +52,16 @@ class ActionMovies extends Component {
 					</video>
 				))}
 				<a
-					class='right carousel-control'
+					className='right carousel-control'
 					href='#myCarousel'
 					role='button'
 					data-slide='next'
 				>
 					<span
-						class='glyphicon glyphicon-chevron-right'
+						className='glyphicon glyphicon-chevron-right'
 						aria-hidden='true'
 					></span>
-					<span class='sr-only'>Next</span>
+					<span className='sr-only'>Next</span>
 				</a>
 			</div>
 		);
