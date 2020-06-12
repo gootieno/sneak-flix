@@ -29,6 +29,13 @@ export const moviesReducer = (state = {}, action) => {
 };
 
 //selector functions
+export const getMovieById = (state, id) => {
+	let movie = Object.values(state.entities.movies).filter(
+		(movie) => movie.id === id
+	);
+	return movie;
+};
+
 export const getActionMovies = (state) => {
 	let movies = Object.values(state.entities.movies).filter(
 		(movie) => movie.genre === 'action'
