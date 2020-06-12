@@ -9,7 +9,7 @@ class ComedyMovies extends Component {
 	}
 	render() {
 		return (
-			<div>
+			<div className='playlist-container'>
 				{this.props.movies.map((movie) => (
 					<video
 						key={movie.id}

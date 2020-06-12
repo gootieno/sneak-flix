@@ -10,6 +10,7 @@ module.exports = {
 					genre: 'comedy',
 					description:
 						'A mockumentary on a group of typical office workers, where the workday consists of ego clashes, inappropriate behavior, and tedium.',
+					image: '',
 					source: '',
 					createdAt: new Date(),
 					updatedAt: new Date(),

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavBar from './NavBar';
-import PlaylistGrid from './PlaylistGrid';
+import PlaylistGrid from './MoviePlaylistGrid';
 
 export default class Browse extends Component {
 	render() {

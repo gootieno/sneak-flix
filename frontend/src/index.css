@@ -1,4 +1,13 @@
-/* TODO Add site wide styles */
+body {
+	background-color: rgb(20, 20, 20);
+	color: white;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
 .header-container {
 	display: flex;
 	justify-content: space-between;
@@ -67,11 +76,6 @@
 	padding-right: 10px;
 }
 
-.playlist-container {
-	padding-left: 75px;
-	padding-top: 50px;
-}
-
 img.playlist-container__box {
 	height: 500px;
 	width: 100px;
@@ -88,11 +92,37 @@ div.playlist-container div {
 	font-weight: bold;
 }
 
+.playlist-container {
+	display: flex;
+	padding: 0 55px;
+}
+
+.playlist-container:hover .playlist-container__video {
+	transform: translateX(-25%);
+}
+
 .playlist-container__video {
-	margin-right: 10px;
+	flex: 0 0 19.7%;
+	text-align: center;
+	object-fit: cover;
+	margin: 0 2px;
+	transition: transform 300ms ease 100ms;
+}
+
+.playlist-container__video:hover ~ .playlist-container__video {
+	transform: translateX(25%);
+}
+
+.playlist-container__video:hover {
+	transform: scale(1.5) !important;
 }
 
 .category-title {
 	padding-left: 80px;
 	padding-top: 20px;
+	padding-bottom: 120px;
+}
+
+h3 {
+	padding-left: 80px;
 }

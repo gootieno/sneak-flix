@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavBar from './NavBar';
-import PlaylistGrid from './PlaylistGrid';
+import MoviePlaylistGrid from './MoviePlaylistGrid';
 import { connect } from 'react-redux';
 import { fetchMovies } from '../utils/apiUtil';
 
@@ -12,10 +12,8 @@ class Movies extends Component {
 		return (
 			<div>
 				<NavBar />
-				<h3 width='350px' height='180px' className='category-title'>
-					Movies
-				</h3>
-				<PlaylistGrid />
+				<h2 className='category-title'>Movies</h2>
+				<MoviePlaylistGrid />
 			</div>
 		);
 	}

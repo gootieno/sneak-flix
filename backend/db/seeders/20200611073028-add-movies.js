@@ -11,6 +11,8 @@ module.exports = {
 					description:
 						"A thief who possesses the power to enter into the dreams of others. Dom Cobb (Leonardo DiCaprio) doesn't steal things, he steals ideas.",
 					length: '2hrs 28min',
+					image:
+						'https://sneakflix.s3-us-west-1.amazonaws.com/movies/action/inception.jpg',
 					source:
 						'https://sneakflix.s3-us-west-1.amazonaws.com/movies/action/inception.mov',
 					createdAt: new Date(),
@@ -22,6 +24,8 @@ module.exports = {
 					description:
 						'When Tony Stark and Bruce Banner try to jump-start a dormant peacekeeping program called Ultron, things go horribly wrong',
 					length: '2hrs 21min',
+					image:
+						'https://sneakflix.s3-us-west-1.amazonaws.com/movies/action/Avengers-age-of-ultron.jpg',
 					source:
 						'https://sneakflix.s3-us-west-1.amazonaws.com/movies/action/Avengers-age-of-ultron.mov',
 					createdAt: new Date(),
@@ -33,6 +37,8 @@ module.exports = {
 					description:
 						'In the prehistoric past, a young man separated from his tribe finds a similarly lost wolf companion',
 					length: '1hr 36min',
+					image:
+						'https://sneakflix.s3-us-west-1.amazonaws.com/movies/action/apha.jpg',
 					source:
 						'https://sneakflix.s3-us-west-1.amazonaws.com/movies/action/alpha-trailer-2_h1080p.mov',
 					createdAt: new Date(),
@@ -44,6 +50,8 @@ module.exports = {
 					description:
 						'Hobbs has Dominic and Brian reassemble their crew to take down a team of mercenaries',
 					length: '2hrs 10min',
+					image:
+						'https://sneakflix.s3-us-west-1.amazonaws.com/movies/action/fastandfurious6.jpg',
 					source:
 						'https://sneakflix.s3-us-west-1.amazonaws.com/movies/action/fastandfurious6.mov',
 					createdAt: new Date(),
@@ -55,6 +63,8 @@ module.exports = {
 					description:
 						'Years after a plague kills most of humanity and transforms the rest into monsters, the sole survivor in New York City struggles to find a cure',
 					length: '1hr 41min',
+					image:
+						'https://sneakflix.s3-us-west-1.amazonaws.com/movies/action/iam-legend.jpg',
 					source:
 						'https://sneakflix.s3-us-west-1.amazonaws.com/movies/action/iam-legend.mov',
 					createdAt: new Date(),
@@ -66,6 +76,8 @@ module.exports = {
 					description:
 						'In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search for her homeland',
 					length: '2hrs',
+					image:
+						'https://sneakflix.s3-us-west-1.amazonaws.com/movies/action/madmax.jpg',
 					source:
 						'https://sneakflix.s3-us-west-1.amazonaws.com/movies/action/madmax.mov',
 					createdAt: new Date(),
@@ -77,6 +89,8 @@ module.exports = {
 					description:
 						'Ethan and his team take on their most impossible mission yet when they have to eradicate an international rogue organization',
 					length: '2hrs 11min',
+					image:
+						'https://sneakflix.s3-us-west-1.amazonaws.com/movies/action/mission-Impossible-rogue-nation.jpg',
 					source:
 						'https://sneakflix.s3-us-west-1.amazonaws.com/movies/action/mission-Impossible-rogue-nation.mov',
 					createdAt: new Date(),
@@ -88,6 +102,8 @@ module.exports = {
 					description:
 						'A lazy, incompetent middle school teacher who hates her job, her students, and her co-workers is forced to return to teaching',
 					length: '1hr 32min',
+					image:
+						'https://sneakflix.s3-us-west-1.amazonaws.com/movies/comedy/bad-teacher.jpg',
 					source:
 						'https://sneakflix.s3-us-west-1.amazonaws.com/movies/comedy/bad-teacher.mov',
 					createdAt: new Date(),
@@ -99,6 +115,8 @@ module.exports = {
 					description:
 						'A local scientist is often regarded as a failure until he invents a machine that can make food fall from the sky.',
 					length: '1hr 30min',
+					image:
+						'https://sneakflix.s3-us-west-1.amazonaws.com/movies/comedy/coudy-with-a-chance-of-meatballs.jpg',
 					source:
 						'https://sneakflix.s3-us-west-1.amazonaws.com/movies/comedy/cloudy-with-a-chance-of-meatballs.mov',
 					createdAt: new Date(),
@@ -110,6 +128,8 @@ module.exports = {
 					description:
 						'Three buddies wake up from a bachelor party in Las Vegas, with no memory of the previous night and the bachelor missing.',
 					length: '1hr 40min',
+					image:
+						'https://sneakflix.s3-us-west-1.amazonaws.com/movies/comedy/hangover.jpg',
 					source:
 						'https://sneakflix.s3-us-west-1.amazonaws.com/movies/comedy/hangover.mov',
 					createdAt: new Date(),
@@ -121,6 +141,8 @@ module.exports = {
 					description:
 						"The untold story of one twelve-year-old's dream to become the world's greatest supervillain.",
 					length: '',
+					image:
+						'https://sneakflix.s3-us-west-1.amazonaws.com/movies/comedy/minions-rise-of-gru.jpg',
 					source:
 						'https://sneakflix.s3-us-west-1.amazonaws.com/movies/comedy/minions-rise-of-gru.mov',
 					createdAt: new Date(),
@@ -132,6 +154,8 @@ module.exports = {
 					description:
 						'Minions Stuart, Kevin, and Bob are recruited by Scarlet Overkill, a supervillain who, alongside her inventor husband Herb, hatches a plot to take over the world.',
 					length: '1hr 31min',
+					image:
+						'https://sneakflix.s3-us-west-1.amazonaws.com/movies/comedy/minions.jpg',
 					source:
 						'https://sneakflix.s3-us-west-1.amazonaws.com/movies/comedy/minions.mov',
 					createdAt: new Date(),
@@ -143,6 +167,8 @@ module.exports = {
 					description:
 						'Two salesmen whose careers have been torpedoed by the digital age find their way into a coveted internship at Google',
 					length: '1hr 59min',
+					image:
+						'https://sneakflix.s3-us-west-1.amazonaws.com/movies/comedy/theinternship.jpg',
 					source:
 						'https://sneakflix.s3-us-west-1.amazonaws.com/movies/comedy/theinternship.mov',
 					createdAt: new Date(),
