@@ -20,25 +20,10 @@ class ActionMovies extends Component {
 
 	render() {
 		return (
-			<div id='myCarousel' className='playlist-container' data-ride='carousel'>
-				<a
-					className='left carousel-control'
-					href='#myCarousel'
-					role='button'
-					data-slide='prev'
-				>
-					<span
-						className='glyphicon glyphicon-chevron-left'
-						aria-hidden='true'
-					></span>
-					<span className='sr-only'>Previous</span>
-				</a>
+			<div className='playlist-container'>
 				{this.props.movies.map((movie, idx) => (
 					<video
 						muted={false}
-						// autoPlay={this.state.autoPlay === idx ? 'autoPlay' : ''}
-						data-target='#myCarousel'
-						data-slide-to={idx + 1}
 						onMouseOver={this.handleVideoMouseOver}
 						onMouseLeave={this.handleVideoMouseLeave}
 						poster={movie.image}
@@ -51,18 +36,6 @@ class ActionMovies extends Component {
 						<source type='video/mp4' src={movie.source} />
 					</video>
 				))}
-				<a
-					className='right carousel-control'
-					href='#myCarousel'
-					role='button'
-					data-slide='next'
-				>
-					<span
-						className='glyphicon glyphicon-chevron-right'
-						aria-hidden='true'
-					></span>
-					<span className='sr-only'>Next</span>
-				</a>
 			</div>
 		);
 	}

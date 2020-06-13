@@ -6,38 +6,26 @@ class Trending extends Component {
 	componentDidMount() {
 		this.props.fetchMovies();
 	}
-	setVideoControlAttribute = (e) => {
-		document.getElementById(e.target.id).controls = true;
-		document.getElementById(e.target.id).autoPlay = true;
+	handleVideoMouseOver = (e) => {
+		e.target.muted = false;
+		e.target.play();
+		// document.getElementById(e.target.id).autoPlay = true;
 	};
 
-	removeVideoControlAttribute = (e) => {
-		document.getElementById(e.target.id).controls = false;
+	handleVideoMouseLeave = (e) => {
+		e.target.load();
 	};
 
 	render() {
 		return (
-			<div id='myCarousel' className='playlist-container' data-ride='carousel'>
-				<a
-					className='left carousel-control'
-					href='#myCarousel'
-					role='button'
-					data-slide='prev'
-				>
-					<span
-						className='glyphicon glyphicon-chevron-left'
-						aria-hidden='true'
-					></span>
-					<span className='sr-only'>Previous</span>
-				</a>
+			<div className='playlist-container'>
 				{this.props.movies.reverse().map((movie, idx) => (
 					<video
-						data-target='#myCarousel'
-						data-slide-to={idx + 1}
-						onMouseOver={this.setVideoControlAttribute}
-						onMouseLeave={this.removeVideoControlAttribute}
+						muted={false}
+						onMouseOver={this.handleVideoMouseOver}
+						onMouseLeave={this.handleVideoMouseLeave}
 						poster={movie.image}
-						key={movie.id}
+						key={idx}
 						height='180'
 						width='350'
 						id={movie.id}
@@ -46,18 +34,6 @@ class Trending extends Component {
 						<source type='video/mp4' src={movie.source} />
 					</video>
 				))}
-				<a
-					className='right carousel-control'
-					href='#myCarousel'
-					role='button'
-					data-slide='next'
-				>
-					<span
-						className='glyphicon glyphicon-chevron-right'
-						aria-hidden='true'
-					></span>
-					<span className='sr-only'>Next</span>
-				</a>
 			</div>
 		);
 	}
