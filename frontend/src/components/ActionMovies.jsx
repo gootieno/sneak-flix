@@ -8,42 +8,26 @@ class ActionMovies extends Component {
 		this.props.fetchMovies();
 	}
 
-	state = {
-		hover: false,
+	handleVideoMouseOver = (e) => {
+		e.target.muted = false;
+		e.target.play();
+		// document.getElementById(e.target.id).autoPlay = true;
 	};
 
-	setVideoControlAttribute = (e) => {
-		document.getElementById(e.target.id).controls = true;
-		document.getElementById(e.target.id).autoPlay = true;
-	};
-
-	removeVideoControlAttribute = (e) => {
-		document.getElementById(e.target.id).controls = false;
+	handleVideoMouseLeave = (e) => {
+		e.target.load();
 	};
 
 	render() {
 		return (
-			<div id='myCarousel' className='playlist-container' data-ride='carousel'>
-				<a
-					class='left carousel-control'
-					href='#myCarousel'
-					role='button'
-					data-slide='prev'
-				>
-					<span
-						class='glyphicon glyphicon-chevron-left'
-						aria-hidden='true'
-					></span>
-					<span class='sr-only'>Previous</span>
-				</a>
+			<div className='playlist-container'>
 				{this.props.movies.map((movie, idx) => (
 					<video
-						data-target='#myCarousel'
-						data-slide-to={idx + 1}
-						onMouseOver={this.setVideoControlAttribute}
-						onMouseLeave={this.removeVideoControlAttribute}
+						muted={false}
+						onMouseOver={this.handleVideoMouseOver}
+						onMouseLeave={this.handleVideoMouseLeave}
 						poster={movie.image}
-						key={movie.id}
+						key={idx}
 						height='180'
 						width='350'
 						id={movie.id}
@@ -52,18 +36,6 @@ class ActionMovies extends Component {
 						<source type='video/mp4' src={movie.source} />
 					</video>
 				))}
-				<a
-					class='right carousel-control'
-					href='#myCarousel'
-					role='button'
-					data-slide='next'
-				>
-					<span
-						class='glyphicon glyphicon-chevron-right'
-						aria-hidden='true'
-					></span>
-					<span class='sr-only'>Next</span>
-				</a>
 			</div>
 		);
 	}

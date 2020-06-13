@@ -3,14 +3,20 @@ const morgan = require('morgan');
 const cors = require('cors');
 const aws = require('./routes/aws');
 const movieRouter = require('./routes/movies');
+const userRouter = require('./routes/users');
+const userAuthRouter = require('./routes/userAuth');
+const { environment } = require('./config');
 
 const app = express();
 
-app.use(cors({ orgin: true }));
+const origin = process.env.FRONTEND_URL;
+app.use(cors({ origin }));
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(aws);
 app.use('/movies', movieRouter);
+app.use('/users', userRouter);
+app.use('/', userAuthRouter);
 
 app.use((req, res, next) => {
 	const err = new Error("The requested page couldn't be found.");
@@ -46,7 +52,5 @@ app.use((err, req, res, next) => {
 		stack: isProduction ? null : err.stack,
 	});
 });
-
-module.exports = app;
 
 module.exports = app;

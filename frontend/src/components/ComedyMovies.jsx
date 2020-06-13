@@ -7,16 +7,30 @@ class ComedyMovies extends Component {
 	componentDidMount() {
 		this.props.fetchMovies();
 	}
+	handleVideoMouseOver = (e) => {
+		e.target.muted = false;
+		e.target.play();
+		// document.getElementById(e.target.id).autoPlay = true;
+	};
+
+	handleVideoMouseLeave = (e) => {
+		e.target.load();
+	};
+
 	render() {
 		return (
 			<div className='playlist-container'>
-				{this.props.movies.map((movie) => (
+				{this.props.movies.map((movie, idx) => (
 					<video
-						key={movie.id}
+						muted={false}
+						onMouseOver={this.handleVideoMouseOver}
+						onMouseLeave={this.handleVideoMouseLeave}
+						poster={movie.image}
+						key={idx}
 						height='180'
 						width='350'
+						id={movie.id}
 						className='playlist-container__video'
-						controls
 					>
 						<source type='video/mp4' src={movie.source} />
 					</video>

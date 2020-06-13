@@ -10,10 +10,11 @@ class Movies extends Component {
 	}
 	render() {
 		return (
-			<div>
+			<div className='movies-container'>
 				<NavBar />
 				<h2 className='category-title'>Movies</h2>
 				<MoviePlaylistGrid />
+				<div className='bottom'></div>
 			</div>
 		);
 	}
