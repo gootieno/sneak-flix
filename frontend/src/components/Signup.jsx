@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-
 import logo from '../images/Sneakflix.png';
+
 export default class Signup extends Component {
 	constructor(props) {
 		super(props);
