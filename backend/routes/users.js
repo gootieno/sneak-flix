@@ -1,7 +1,7 @@
 const express = require('express');
 const { User } = require('../db/models');
 
-const { asyncHandler, handleValidationErrors } = require('../utils');
+const asyncHandler = require('express-async-handler');
 
 const router = express.Router();
 // Get route for user by id
