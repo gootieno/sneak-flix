@@ -11,6 +11,7 @@ import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
 import Signup from './components/Signup';
 import LandingPage from './components/LandingPage';
+import Login from './components/Login';
 
 const store = configureStore();
 
@@ -24,6 +25,7 @@ const Root = () => {
 					<Route path='/movies' component={Movies} />
 					<Route path='/tv-shows' component={TvShows} />
 					<Route path='/sign-up' component={Signup} />
+					<Route path='/login' component={Login} />
 				</Switch>
 			</BrowserRouter>
 		</Provider>

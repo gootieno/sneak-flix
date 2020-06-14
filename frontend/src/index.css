@@ -81,12 +81,44 @@ button > a {
 	display: grid;
 	grid-template-rows: 40px 40px;
 	justify-content: center;
-	margin-top: 250px;
+	padding-top: 250px;
 }
 
-#sign-up {
-	text-align: center;
+h2#sign-in {
+	display: flex;
+	justify-content: center;
 	font-weight: bold;
+	padding-bottom: 20px;
+	padding-top: 50px;
+}
+
+.body-container__login-form {
+	display: grid;
+	grid-template-rows: 40px 40px;
+	justify-content: center;
+	padding-top: 1px;
+	padding-bottom: 80px;
+}
+
+.logo {
+	margin: 35px 0px 0px 25px;
+}
+
+.login-card {
+	box-shadow: 0 4px 10px 5px rgba(83, 0, 0, 0.5);
+	transition: 0.3s;
+	background: linear-gradient(
+		to right,
+		rgb(22, 22, 22) 0%,
+		rgba(0, 0, 0, 1) 14%,
+		rgba(0, 0, 0, 1) 50%,
+		rgba(0, 0, 0, 1) 86%,
+		rgba(22, 22, 22) 100%
+	);
+	padding-bottom: 50px;
+	margin-top: 100px;
+	margin-right: 700px;
+	margin-left: 700px;
 }
 
 .body-container__signup-message {
@@ -140,6 +172,7 @@ form > p {
 	line-height: 22px;
 	font-size: 14px;
 	color: red;
+	font-weight: bold;
 	background-color: rgb(20, 20, 20);
 }
 
