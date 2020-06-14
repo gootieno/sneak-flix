@@ -1,15 +1,35 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import logo from '../images/Sneakflix.png';
+import { connect } from 'react-redux';
+import { login } from '../store/reducers/auth';
 
-export default class Login extends Component {
-	constructor() {
-		super();
+class Login extends Component {
+	constructor(props) {
+		super(props);
 		this.state = {
 			email: '',
 			password: '',
 		};
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
+	async handleSubmit(e) {
+		e.preventDefault();
+		this.props.login(this.state.email, this.state.password);
+	}
+
+	updateEmail = (e) => {
+		this.setState({ email: e.target.value });
+	};
+
+	updatePassword = (e) => {
+		this.setState({ password: e.target.value });
+	};
+
 	render() {
+		if (this.props.token) {
+			return <Redirect to='/' />;
+		}
 		return (
 			<div>
 				<header>
@@ -25,13 +45,13 @@ export default class Login extends Component {
 						<p>We missed you!</p>
 						<input
 							type='email'
-							onChange={this.onChange}
+							onChange={this.updateEmail}
 							value={this.state.email}
 							placeholder='example@email.com'
 						/>
 						<input
 							type='password'
-							onChange={this.onChange}
+							onChange={this.updatePassword}
 							value={this.state.password}
 							placeholder='password'
 						/>
@@ -47,3 +67,17 @@ export default class Login extends Component {
 		);
 	}
 }
+
+const mapStateToProps = (state) => {
+	return {
+		token: state.entities.auth.token,
+	};
+};
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		login: (email, password) => dispatch(login(email, password)),
+	};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

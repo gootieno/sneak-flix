@@ -3,9 +3,6 @@ const csrf = require('csurf');
 
 const csrfProtection = csrf({ cookie: true });
 
-const asyncHandler = (handler) => (req, res, next) =>
-	handler(req, res, next).catch(next);
-
 const handleValidationErrors = (req, res, next) => {
 	const validateErrors = validationResult(req);
 	if (!validateErrors.isEmpty()) {
@@ -19,4 +16,4 @@ const handleValidationErrors = (req, res, next) => {
 	next();
 };
 
-module.exports = { csrfProtection, asyncHandler, handleValidationErrors };
+module.exports = { csrfProtection, handleValidationErrors };

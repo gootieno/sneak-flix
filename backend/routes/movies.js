@@ -1,6 +1,6 @@
 const express = require('express');
 const { Movie } = require('../db/models');
-const { asyncHandler } = require('../utils');
+const asyncHandler = require('express-async-handler');
 
 const router = express.Router();
 
