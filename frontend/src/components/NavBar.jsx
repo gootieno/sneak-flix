@@ -7,7 +7,9 @@ export default function NavBar() {
 		<div className='navbar-container'>
 			<nav className='navbar-container__left-links'>
 				<span>
-					<img src={logo} alt='logo' />
+					<a href='/browse'>
+						<img src={logo} alt='logo' />
+					</a>
 				</span>
 				<NavLink className='navbar-container__navs' to='/browse'>
 					Home
