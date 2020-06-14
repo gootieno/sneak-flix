@@ -1,56 +1,19 @@
-const bearerToken = require('express-bearer-token');
-const jwt = require('jsonwebtoken');
-const uuid = require('uuid').v4;
+const { validationResult } = require('express-validator');
+const csrf = require('csurf');
 
-const {
-	jwtConfig: { secret, expiresIn },
-} = require('./config');
-const UserRepository = require('./db/user-repository.js');
+const csrfProtection = csrf({ cookie: true });
 
-function generateToken(user) {
-	const data = {
-		name: user.name,
-	};
-	const jwtid = uuid();
-
-	return {
-		jti: jwtid,
-		token: jwt.sign({ data }, secret, {
-			expiresIn: Number.parseInt(expiresIn),
-			jwtid,
-		}),
-	};
-}
-
-function restoreUser(req, res, next) {
-	const { token } = req;
-
-	if (!token) {
-		return next({ status: 401, message: 'no token' });
+const handleValidationErrors = (req, res, next) => {
+	const validateErrors = validationResult(req);
+	if (!validateErrors.isEmpty()) {
+		const errors = validateErrors.array().map((error) => error.msg);
+		const err = Error('Bad Request.');
+		err.errors = errors;
+		err.status = 400;
+		err.title = 'Bad request';
+		return next(err);
 	}
+	next();
+};
 
-	return jwt.verify(token, secret, null, async (err, payload) => {
-		if (err) {
-			err.status = 403;
-			return next(err);
-		}
-
-		const tokenId = payload.jti;
-
-		try {
-			req.User = await UserRepository.findByTokenId(tokenId);
-		} catch (e) {
-			return next(e);
-		}
-
-		if (!req.User.isValid()) {
-			return next({ status: 404, message: 'session not found' });
-		}
-
-		next();
-	});
-}
-
-const authenticated = [bearerToken(), restoreUser];
-
-module.exports = { generateToken, authenticated };
+module.exports = { csrfProtection, handleValidationErrors };

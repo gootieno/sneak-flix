@@ -72,11 +72,10 @@ router.post(
 );
 
 //Post route for loging in user
-router.post(
+router.put(
 	'/login',
 	validateEmailAndPassword,
-
-	asyncHandler(async (req, res) => {
+	asyncHandler(async (req, res, next) => {
 		const { email, password } = req.body;
 		const user = await User.findOne({ where: { email } });
 

@@ -3,7 +3,6 @@ const morgan = require('morgan');
 const cors = require('cors');
 const aws = require('./routes/aws');
 const movieRouter = require('./routes/movies');
-const userRouter = require('./routes/users');
 const userAuthRouter = require('./routes/userAuth');
 const { environment } = require('./config');
 
@@ -15,7 +14,6 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(aws);
 app.use('/movies', movieRouter);
-app.use('/users', userRouter);
 app.use('/', userAuthRouter);
 
 app.use((req, res, next) => {
