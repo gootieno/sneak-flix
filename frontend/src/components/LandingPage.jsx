@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../images/sneakflix.png';
+import logo from '../images/Sneakflix.png';
 //only data needed is email address for try it now
 // should render the landingpageheader, landingpagebody, landingpagebottom
 
@@ -15,7 +15,14 @@ export default class LandingPage extends Component {
 					<span>
 						<img src={logo} alt='logo' />
 					</span>
-					<button className='header-container__signin'>Sign In</button>
+					<div>
+						<a href='/'>
+							<button className='header-container__demo'>Demo</button>
+						</a>
+						<a href='/login'>
+							<button className='header-container__login'>Login</button>
+						</a>
+					</div>
 				</header>
 				<div className='body-container'>
 					<h1 className='body-container__title'>
@@ -24,24 +31,27 @@ export default class LandingPage extends Component {
 					<h5 className='body-container__signup-message'>
 						Watch anytime. No subscription needed
 					</h5>
-					<form className='body-container__signup-form'>
-						<input type='text'></input>
-						<button className='body-container__try-it-now'>TRY IT NOW ></button>
-						<p>Ready to watch? Enter email address to sign up!</p>
-					</form>
+					<div className='form-container'>
+						<form className='body-container__signup-form'>
+							<input type='email' placeholder='example@email.com' />
+						</form>
+						<a href='/sign-up'>
+							<button className='body-container__try-it-now'>TRY IT NOW</button>
+						</a>
+					</div>
+					<p>Ready to watch? Enter email address to sign up!</p>
 				</div>
 				<footer className='footer-container'>
 					<h2 className='footer-container_faq'>Frequently Asked Questions</h2>
-					<button className='footer-container__buttons'>
-						Drop down button 1
-					</button>
-					<button className='footer-container__buttons'>
-						Drop down button 2
-					</button>
-					<button className='footer-container__buttons'>
-						Drop down button 3
-					</button>
-					<button className='footer-container__buttons'>TRY THE DEMO!</button>
+					<a href='https://github.com/gootieno' className='footer-link-git'>
+						Where can I see more of this developers work?
+					</a>
+					<a
+						href='https://www.linkedin.com/in/geoffrey-otieno-57015966/'
+						className='footer-link-linkedIn'
+					>
+						Can I contant the developer in LinkedIn?
+					</a>
 				</footer>
 			</div>
 		);
