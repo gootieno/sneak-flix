@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '../images/sneakflix.png';
+import logo from '../images/Sneakflix.png';
 
 export default function NavBar() {
 	return (
