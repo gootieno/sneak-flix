@@ -6,8 +6,8 @@ body {
 		rgba(0, 0, 0, 1) 0%,
 		rgba(0, 0, 0, 1) 14%,
 		rgba(61, 59, 61, 1) 50%,
-		rgba(17, 17, 17, 1) 81%,
-		rgba(17, 17, 17, 1) 100%
+		rgba(0, 0, 0, 1) 86%,
+		rgba(0, 0, 0, 1) 100%
 	);
 }
 
@@ -77,6 +77,18 @@ button > a {
 	font-size: 4em;
 }
 
+.body-container__signup-form {
+	display: grid;
+	grid-template-rows: 40px 40px;
+	justify-content: center;
+	margin-top: 250px;
+}
+
+#sign-up {
+	text-align: center;
+	font-weight: bold;
+}
+
 .body-container__signup-message {
 	font-size: 2em;
 	text-align: center;
@@ -86,14 +98,15 @@ button > a {
 	border: 2px solid red;
 	padding: 5px 35px 7px;
 	border-radius: 5px;
-	line-height: 14px;
+	line-height: 18px;
+	font-size: 18px;
 	transition-duration: 0.4s;
 	background: linear-gradient(
 		to right,
-		rgb(78, 77, 78) 0%,
-		rgb(68, 68, 68) 14%,
+		rgb(29, 29, 29) 0%,
+		rgb(41, 41, 41) 14%,
 		rgba(61, 59, 61, 1) 50%,
-		rgb(41, 41, 41) 81%,
+		rgb(41, 41, 41) 86%,
 		rgb(29, 29, 29) 100%
 	);
 	font-weight: bold;
@@ -105,13 +118,43 @@ button > a {
 }
 
 .form-container {
+	padding-top: 80px;
 	grid-row-start: 3;
 	display: flex;
 	justify-content: center;
 }
 
+form > p {
+	text-align: center;
+	font-weight: bold;
+}
+
+.body-container__sign-up {
+	margin-top: 10px;
+	margin-left: 40px;
+	margin-right: 40px;
+	transition-duration: 0.4s;
+	border: 2px solid red;
+	padding: 5px 35px 7px;
+	border-radius: 5px;
+	line-height: 22px;
+	font-size: 14px;
+	color: red;
+	background-color: rgb(20, 20, 20);
+}
+
+.body-container__sign-up:hover {
+	background-color: red;
+	border: 2px solid black;
+	color: black;
+	font-weight: bold;
+}
+
 input {
-	line-height: 24px;
+	justify-self: center;
+	margin-top: 5px;
+	background-image: '';
+	line-height: 34px;
 	width: 350px;
 	margin-right: 5px;
 	color: black;

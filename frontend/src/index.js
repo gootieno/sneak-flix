@@ -9,6 +9,8 @@ import Movies from './components/Movies';
 import TvShows from './components/TvShows';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
+import Signup from './components/Signup';
+import LandingPage from './components/LandingPage';
 
 const store = configureStore();
 
@@ -21,6 +23,7 @@ const Root = () => {
 					<Route path='/browse' component={Browse} />
 					<Route path='/movies' component={Movies} />
 					<Route path='/tv-shows' component={TvShows} />
+					<Route path='/sign-up' component={Signup} />
 				</Switch>
 			</BrowserRouter>
 		</Provider>
