@@ -1,58 +1,50 @@
-const jwt = require("jsonwebtoken");
-const { jwtConfig } = require("./config");
+
 const { User } = require("./db/models");
-const bearerToken = require("express-bearer-token");
+const express = require('express');
+const asyncHandler = require('express-async-handler');
+const { check, validationResult } = require('express-validator');
 
-const { secret, expiresIn } = jwtConfig;
+const PlayerRepository = require('../../db/player-repository');
+const { authenticated, generateToken } = require('./security-utils');
 
-const getUserToken = (user) => {
-    const userTokenData = {
-        id: user.id,
-        email: user.email
-    };
+const router = express.Router();
 
-    //Here we create the token
-    const token = jwt.sign(
-        { data: userTokenData },
-        secret,
-        {expiresIn: parseInt(expiresIn, 10)} // This will expire in 1 week
-    );
+const email =
+  check('email')
+    .isEmail()
+    .withMessage('Please provide a valid email address')
+    .normalizeEmail();
 
-    return token;
-}
+const password =
+  check('password')
+    .not().isEmpty()
+    .withMessage('Please provide a password');
 
+router.put('/', [email, password], asyncHandler(async (req, res, next) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return next({ status: 422, errors: errors.array() });
+  }
 
-const restoreUser = (req, res, next) => {
-    const { token } = req;
+  const { email, password } = req.body;
+  const player = await PlayerRepository.findByEmail(email);
+  if (!player.isValidPassword(password)) {
+    const err = new Error('Login failed');
+    err.status = 401;
+    err.title = 'Login failed';
+    err.errors = ['Invalid credentials'];
+    return next(err);
+  }
+  const { jti, token } = generateToken(player);
+  player.tokenId = jti;
+  await player.save();
+  res.json({ token, player: player.toSafeObject() });
+}));
 
-    if(!token){
-        return res.set("WWW-Authenticate", "Bearer").status(401).end();
-    }
-    return jwt.verify(token, secret, null, async( err, jwtPayload) => {
-        if(err) {
-            err.status = 401;
-            return next(err);
-        }
+router.delete('/', [authenticated], asyncHandler(async (req, res) => {
+  req.player.tokenId = null;
+  await req.player.save();
+  res.json({ message: 'success' });
+}));
 
-        const { id } = jwtPayload.data
-
-        try{
-            req.user = await User.findByPk(2);
-
-        } catch (e){
-            return next(e)
-        }
-
-        if(!req.user) {
-           
-            return res.set("WWW-Authenticate", "Bearer").status(401).end();
-        }
-        return next();
-    })
-}
-
-const requireAuth = [bearerToken(), restoreUser];
-module.exports = {
-    getUserToken,
-    requireAuth
-};
+module.exports = router;

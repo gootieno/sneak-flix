@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import logo from '../images/Sneakflix.png';
+import { connect } from 'react-redux';
+import { actions } from '../store/reducers/auth';
 
-export default class Signup extends Component {
+export class Signup extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			email: '',
 			password: '',
 		};
 	}
@@ -35,14 +36,13 @@ export default class Signup extends Component {
 					<p>This is the only form page! We hate long forms too!</p>
 					<input
 						type='email'
-						onChange={this.onChange}
-						value={this.state.email}
+						onChange={this.props.updateEmail}
 						placeholder='example@email.com'
 					/>
 					<input
 						type='password'
-						onChange={this.onChange}
-						value={this.state.password}
+						onChange={this.props.updatePassword}
+						value={this.props.password}
 						placeholder='password'
 					/>
 					<button
@@ -58,3 +58,20 @@ export default class Signup extends Component {
 		);
 	}
 }
+
+const mapStateToProps = (state) => {
+	return {
+		email: state.entities.auth.email,
+		password: state.entities.auth.password,
+	};
+};
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		updateEmail: (event) => dispatch(actions.updateEmail(event.target.value)),
+		updatePassword: (event) =>
+			dispatch(actions.updatePassword(event.target.value)),
+	};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Signup);

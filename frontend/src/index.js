@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
 import './index.css';
 import App from './App';
 import 'font-awesome/css/font-awesome.css';
@@ -10,20 +11,32 @@ import TvShows from './components/TvShows';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
 import Signup from './components/Signup';
-import LandingPage from './components/LandingPage';
 import Login from './components/Login';
+import ProtectedRoute from './components/ProtectedRoute';
 
 const store = configureStore();
 
-const Root = () => {
+const Root = (props) => {
 	return (
 		<Provider store={store}>
 			<BrowserRouter>
 				<Switch>
 					<Route exact path='/' component={App} />
-					<Route path='/browse' component={Browse} />
-					<Route path='/movies' component={Movies} />
-					<Route path='/tv-shows' component={TvShows} />
+					<ProtectedRoute
+						isLoggedIn={props.token}
+						path='/browse'
+						component={Browse}
+					/>
+					<ProtectedRoute
+						isLoggedIn={props.token}
+						path='/movies'
+						component={Movies}
+					/>
+					<ProtectedRoute
+						isLoggedIn={props.token}
+						path='/tv-shows'
+						component={TvShows}
+					/>
 					<Route path='/sign-up' component={Signup} />
 					<Route path='/login' component={Login} />
 				</Switch>
@@ -38,3 +51,11 @@ ReactDOM.render(
 	</React.StrictMode>,
 	document.getElementById('root')
 );
+
+const mapStateToProps = (state) => {
+	return {
+		token: state.entities.auth.token,
+	};
+};
+
+export default connect(mapStateToProps)(Root);

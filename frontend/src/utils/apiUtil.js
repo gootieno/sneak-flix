@@ -6,3 +6,5 @@ export const fetchMovies = () => async (dispatch) => {
 	const { movies } = await response.json();
 	dispatch(receiveMovies(movies));
 };
+
+
