@@ -28,7 +28,6 @@ export const loadToken = () => async (dispatch) => {
 };
 
 export const login = (email, password) => async (dispatch) => {
-	console.log('email and pw ', email, password);
 	const response = await fetch('http://localhost:8080/user/login', {
 		method: 'PUT',
 		headers: { 'Content-Type': 'application/json' },

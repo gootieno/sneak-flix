@@ -11,6 +11,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import { loadToken } from './store/reducers/auth';
 import ProtectedRoute from './components/ProtectedRoute';
+import Demo from './components/Demo';
 
 // const ProtectedRoute = ({ component: Component, ...rest }) => (
 // 	<Route
@@ -63,6 +64,7 @@ class App extends Component {
 					/>
 					<Route path='/sign-up' component={Signup} />
 					<Route path='/login' component={Login} />
+					<Route path='/demo' component={Demo} />
 				</Switch>
 			</BrowserRouter>
 		);
