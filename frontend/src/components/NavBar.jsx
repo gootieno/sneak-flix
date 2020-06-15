@@ -30,9 +30,7 @@ export default function NavBar() {
 					<input />
 				</span>
 				<span>
-					<a>
-						<Logout />
-					</a>
+					<Logout />
 				</span>
 			</div>
 		</div>

@@ -283,10 +283,7 @@ div.playlist-container div {
 .playlist-container {
 	display: flex;
 	padding: 0 55px;
-}
-
-.playlist-container:hover .playlist-container__video {
-	transform: translateX(-25%);
+	justify-content: center;
 }
 
 .playlist-container__video {
@@ -297,12 +294,8 @@ div.playlist-container div {
 	transition: transform 300ms ease 100ms;
 }
 
-.playlist-container__video:hover ~ .playlist-container__video {
-	transform: translateX(25%);
-}
-
 .playlist-container__video:hover {
-	transform: scale(1.5) !important;
+	transform: scale(1.2) !important;
 }
 
 .category-title {
@@ -329,4 +322,35 @@ button#demo-button {
 
 div#login-card {
 	padding-bottom: 5px;
+}
+
+.button-slider {
+	display: flex;
+	justify-content: space-between;
+}
+
+.button-left {
+	margin-left: 40px;
+	transition-duration: 0.4s;
+	border: 2px solid red;
+	padding: 5px 20px 7px;
+	border-radius: 5px;
+	line-height: 10px;
+	font-size: 14px;
+	color: red;
+	font-weight: bold;
+	background-color: rgb(20, 20, 20);
+}
+
+.button-right {
+	margin-right: 40px;
+	transition-duration: 0.4s;
+	border: 2px solid red;
+	padding: 5px 20px 7px;
+	border-radius: 5px;
+	line-height: 10px;
+	font-size: 14px;
+	color: red;
+	font-weight: bold;
+	background-color: rgb(20, 20, 20);
 }

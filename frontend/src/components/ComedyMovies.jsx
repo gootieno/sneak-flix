@@ -10,7 +10,7 @@ class ComedyMovies extends Component {
 	handleVideoMouseOver = (e) => {
 		e.target.muted = false;
 		e.target.play();
-		// document.getElementById(e.target.id).autoPlay = true;
+		document.getElementById(e.target.id).controls = true;
 	};
 
 	handleVideoMouseLeave = (e) => {
