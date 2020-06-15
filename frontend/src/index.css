@@ -44,6 +44,24 @@ a {
 	color: red;
 	background-color: rgb(20, 20, 20);
 }
+
+#logout {
+	transition-duration: 0.4s;
+	border: 2px solid red;
+	padding: 5px 35px 7px;
+	border-radius: 5px;
+	line-height: 22px;
+	font-size: 14px;
+	color: red;
+	background-color: rgb(20, 20, 20);
+}
+
+#logout:hover {
+	background-color: red;
+	border: 2px solid black;
+	color: black;
+}
+
 .header-container__login:hover {
 	background-color: red;
 	border: 2px solid black;
@@ -221,6 +239,7 @@ a.footer-link-linkedIn {
 	display: flex;
 	justify-content: space-between;
 	padding: 0px, 10px;
+	padding-bottom: 220px;
 }
 
 .navbar-container__left-links {
@@ -264,11 +283,8 @@ div.playlist-container div {
 
 .playlist-container {
 	display: flex;
-	padding: 0 55px;
-}
-
-.playlist-container:hover .playlist-container__video {
-	transform: translateX(-25%);
+	padding-left: 50px;
+	justify-content: center;
 }
 
 .playlist-container__video {
@@ -279,22 +295,23 @@ div.playlist-container div {
 	transition: transform 300ms ease 100ms;
 }
 
-.playlist-container__video:hover ~ .playlist-container__video {
-	transform: translateX(25%);
-}
-
 .playlist-container__video:hover {
-	transform: scale(1.5) !important;
+	transform: scale(1.2) !important;
 }
 
 .category-title {
+	position: absolute;
 	padding-left: 80px;
 	padding-top: 20px;
 	padding-bottom: 120px;
+	top: 80px;
 }
 
 h3 {
 	padding-left: 80px;
+	margin: 0px;
+	padding-bottom: 20px;
+	padding-top: 20px;
 }
 
 .bottom {
@@ -303,4 +320,55 @@ h3 {
 
 button {
 	color: black;
+}
+
+button#demo-button {
+	margin-top: 50px;
+}
+
+div#login-card {
+	padding-bottom: 5px;
+}
+
+.button-slider {
+	display: flex;
+	justify-content: space-between;
+}
+
+.button-left {
+	margin-left: 40px;
+	transition-duration: 0.4s;
+	border: 2px solid red;
+	padding: 5px 20px 7px;
+	border-radius: 5px;
+	line-height: 10px;
+	font-size: 14px;
+	color: red;
+	font-weight: bold;
+	background-color: rgb(20, 20, 20);
+	opacity: 0.1;
+}
+.button-left:hover {
+	opacity: 1;
+}
+
+.button-right {
+	margin-right: 40px;
+	transition-duration: 0.4s;
+	border: 2px solid red;
+	padding: 5px 20px 7px;
+	border-radius: 5px;
+	line-height: 10px;
+	font-size: 14px;
+	color: red;
+	font-weight: bold;
+	background-color: rgb(20, 20, 20);
+	opacity: 0.1;
+}
+.button-right:hover {
+	opacity: 1;
+}
+
+.playlist-grid {
+	padding-bottom: 80px;
 }

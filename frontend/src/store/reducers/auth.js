@@ -1,7 +1,8 @@
 const UPDATE_EMAIL = 'UPDATE_EMAIL';
 const UPDATE_PASSWORD = 'UPDATE_PASSWORD';
-const TOKEN_KEY = 'authentication/token';
+const TOKEN_KEY = 'authentication/TOKEN';
 const SET_TOKEN = 'SNEAK_FLIX/SET_TOKEN';
+const REMOVE_TOKEN = '/authentication/REMOVE_TOKEN';
 
 const updatePassword = (value) => ({
 	type: UPDATE_PASSWORD,
@@ -14,6 +15,7 @@ const updateEmail = (value) => ({
 });
 
 export const setToken = (token) => ({ type: SET_TOKEN, token });
+export const removeToken = (token) => ({ type: REMOVE_TOKEN });
 
 export const actions = {
 	updateEmail,
@@ -41,6 +43,11 @@ export const login = (email, password) => async (dispatch) => {
 	}
 };
 
+export const logout = () => async (dispatch, getState) => {
+	window.localStorage.removeItem(TOKEN_KEY);
+	dispatch(removeToken());
+};
+
 const initialState = {
 	token: '',
 };
@@ -64,6 +71,11 @@ export const authReducer = (state = initialState, action) => {
 				...state,
 				token: action.token,
 			};
+		}
+		case REMOVE_TOKEN: {
+			const newState = { ...state };
+			delete newState.token;
+			return newState;
 		}
 		default: {
 			return state;
