@@ -5,7 +5,7 @@ import ComedyMovies from './ComedyMovies';
 
 export default function MoviePlaylistGrid() {
 	return (
-		<div>
+		<div className='playlist-grid'>
 			<h3>Trending Now</h3>
 			<div className='carousel'>
 				<Trending />

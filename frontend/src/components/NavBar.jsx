@@ -15,9 +15,7 @@ export default function NavBar() {
 				<NavLink className='navbar-container__navs' to='/browse'>
 					Home
 				</NavLink>
-				<NavLink className='navbar-container__navs' to='/tv-shows'>
-					TV Shows
-				</NavLink>
+
 				<NavLink className='navbar-container__navs' to='/movies'>
 					Movies
 				</NavLink>
@@ -26,9 +24,9 @@ export default function NavBar() {
 				</NavLink>
 			</nav>
 			<div className='navbar-container__right-search-profile'>
-				<span className='navbar-container__search'>
+				{/* <span className='navbar-container__search'>
 					<input />
-				</span>
+				</span> */}
 				<span>
 					<Logout />
 				</span>

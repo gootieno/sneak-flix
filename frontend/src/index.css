@@ -239,6 +239,7 @@ a.footer-link-linkedIn {
 	display: flex;
 	justify-content: space-between;
 	padding: 0px, 10px;
+	padding-bottom: 220px;
 }
 
 .navbar-container__left-links {
@@ -282,7 +283,7 @@ div.playlist-container div {
 
 .playlist-container {
 	display: flex;
-	padding: 0 55px;
+	padding-left: 50px;
 	justify-content: center;
 }
 
@@ -299,13 +300,18 @@ div.playlist-container div {
 }
 
 .category-title {
+	position: absolute;
 	padding-left: 80px;
 	padding-top: 20px;
 	padding-bottom: 120px;
+	top: 80px;
 }
 
 h3 {
 	padding-left: 80px;
+	margin: 0px;
+	padding-bottom: 20px;
+	padding-top: 20px;
 }
 
 .bottom {
@@ -340,6 +346,10 @@ div#login-card {
 	color: red;
 	font-weight: bold;
 	background-color: rgb(20, 20, 20);
+	opacity: 0.1;
+}
+.button-left:hover {
+	opacity: 1;
 }
 
 .button-right {
@@ -353,4 +363,12 @@ div#login-card {
 	color: red;
 	font-weight: bold;
 	background-color: rgb(20, 20, 20);
+	opacity: 0.1;
+}
+.button-right:hover {
+	opacity: 1;
+}
+
+.playlist-grid {
+	padding-bottom: 80px;
 }

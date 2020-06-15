@@ -33,7 +33,7 @@ class ActionMovies extends Component {
 			<CarouselProvider
 				naturalSlideWidth={90}
 				naturalSlideHeight={10}
-				totalSlides={1.5}
+				totalSlides={1.48}
 			>
 				<Slider>
 					<span className='playlist-container'>

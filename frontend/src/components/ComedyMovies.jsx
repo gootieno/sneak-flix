@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchMovies } from '../utils/apiUtil';
 import { getComedyMovies } from '../store/reducers/movies';
+import {
+	CarouselProvider,
+	Slider,
+	Slide,
+	ButtonBack,
+	ButtonNext,
+} from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
 
 class ComedyMovies extends Component {
 	componentDidMount() {
@@ -19,23 +27,37 @@ class ComedyMovies extends Component {
 
 	render() {
 		return (
-			<div className='playlist-container'>
-				{this.props.movies.map((movie, idx) => (
-					<video
-						muted={false}
-						onMouseOver={this.handleVideoMouseOver}
-						onMouseLeave={this.handleVideoMouseLeave}
-						poster={movie.image}
-						key={idx}
-						height='180'
-						width='350'
-						id={movie.id}
-						className='playlist-container__video'
-					>
-						<source type='video/mp4' src={movie.source} />
-					</video>
-				))}
-			</div>
+			<CarouselProvider
+				naturalSlideWidth={90}
+				naturalSlideHeight={10}
+				totalSlides={1.28}
+			>
+				<Slider>
+					<span className='playlist-container'>
+						{this.props.movies.map((movie, idx) => (
+							<Slide index={idx}>
+								<video
+									muted={false}
+									onMouseOver={this.handleVideoMouseOver}
+									onMouseLeave={this.handleVideoMouseLeave}
+									poster={movie.image}
+									key={idx}
+									height='180'
+									width='350'
+									id={movie.id}
+									className='playlist-container__video'
+								>
+									<source type='video/mp4' src={movie.source} />
+								</video>
+							</Slide>
+						))}
+					</span>
+				</Slider>
+				<div className='button-slider'>
+					<ButtonBack className='button-left'>Back</ButtonBack>
+					<ButtonNext className='button-right'>Next</ButtonNext>
+				</div>
+			</CarouselProvider>
 		);
 	}
 }
