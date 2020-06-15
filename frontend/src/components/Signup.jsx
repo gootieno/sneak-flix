@@ -61,8 +61,8 @@ export class Signup extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		email: state.entities.auth.email,
-		password: state.entities.auth.password,
+		email: state.auth.email,
+		password: state.auth.password,
 	};
 };
 

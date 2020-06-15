@@ -27,8 +27,9 @@ class Login extends Component {
 	};
 
 	render() {
+	
 		if (this.props.token) {
-			return <Redirect to='/' />;
+			return <Redirect to='/browse' />;
 		}
 		return (
 			<div>
@@ -70,7 +71,7 @@ class Login extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		token: state.entities.auth.token,
+		token: state.auth.token,
 	};
 };
 
