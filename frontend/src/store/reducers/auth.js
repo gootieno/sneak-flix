@@ -43,6 +43,21 @@ export const login = (email, password) => async (dispatch) => {
 	}
 };
 
+export const signup = (email, password) => async (dispatch) => {
+	const response = await fetch('http://localhost:8080/user/sign-up', {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify({ email, password }),
+	});
+
+	if (response.ok) {
+		const { token } = await response.json();
+		window.localStorage.setItem(TOKEN_KEY, token);
+		dispatch(setToken(token));
+		window.location.href = '/browse';
+	}
+};
+
 export const logout = () => async (dispatch, getState) => {
 	window.localStorage.removeItem(TOKEN_KEY);
 	dispatch(removeToken());
