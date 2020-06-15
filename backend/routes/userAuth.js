@@ -55,13 +55,12 @@ router.post(
 	'/sign-up',
 	validateUser,
 	asyncHandler(async (req, res) => {
-		const { email, password, userName } = req.body;
+		const { email, password } = req.body;
 
 		const hashedPassword = await bcrypt.hash(password, 10);
 		const user = await User.create({
 			email,
 			hashedPassword,
-			userName,
 		});
 		const token = getUserToken(user);
 		res.status(201).json({
@@ -77,10 +76,8 @@ router.put(
 	validateEmailAndPassword,
 	asyncHandler(async (req, res, next) => {
 		const { email, password } = req.body;
-		console.log('server email pw ', email, password);
 		const user = await User.findOne({ where: { email } });
-		console.log('this is user', user);
-		if (!user) {
+		if (!user || !user.validatePassword(password)) {
 			const err = new Error('Login Failed');
 			err.status = 404;
 			err.title = 'Login failed';

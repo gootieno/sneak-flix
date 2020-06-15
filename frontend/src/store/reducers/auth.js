@@ -28,8 +28,6 @@ export const loadToken = () => async (dispatch) => {
 };
 
 export const login = (email, password) => async (dispatch) => {
-	debugger;
-	console.log('email and pw ', email, password);
 	const response = await fetch('http://localhost:8080/user/login', {
 		method: 'PUT',
 		headers: { 'Content-Type': 'application/json' },
@@ -38,7 +36,6 @@ export const login = (email, password) => async (dispatch) => {
 
 	if (response.ok) {
 		const { token } = await response.json();
-		console.log(token);
 		window.localStorage.setItem(TOKEN_KEY, token);
 		dispatch(setToken(token));
 	}
@@ -60,6 +57,12 @@ export const authReducer = (state = initialState, action) => {
 			return {
 				...state,
 				password: action.value,
+			};
+		}
+		case SET_TOKEN: {
+			return {
+				...state,
+				token: action.token,
 			};
 		}
 		default: {

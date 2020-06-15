@@ -10,19 +10,21 @@ import LandingPage from './components/LandingPage';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import { loadToken } from './store/reducers/auth';
+import ProtectedRoute from './components/ProtectedRoute';
+import Demo from './components/Demo';
 
-const ProtectedRoute = ({ component: Component, ...rest }) => (
-	<Route
-		{...rest}
-		render={(props) =>
-			rest.needLogin === true ? (
-				<Redirect to='/login' />
-			) : (
-				<Component {...props} />
-			)
-		}
-	/>
-);
+// const ProtectedRoute = ({ component: Component, ...rest }) => (
+// 	<Route
+// 		{...rest}
+// 		render={(props) =>
+// 			rest.needLogin === true ? (
+// 				<Redirect to='/login' />
+// 			) : (
+// 				<Component {...props} />
+// 			)
+// 		}
+// 	/>
+// );
 
 class App extends Component {
 	constructor(props) {
@@ -46,22 +48,23 @@ class App extends Component {
 				<Switch>
 					<Route exact path='/' component={LandingPage} />
 					<ProtectedRoute
-						isLoggedIn={this.props.needLogin}
+						isLoggedIn={this.props.token}
 						path='/browse'
 						component={Browse}
 					/>
 					<ProtectedRoute
-						isLoggedIn={this.props.needLogin}
+						isLoggedIn={this.props.token}
 						path='/movies'
 						component={Movies}
 					/>
 					<ProtectedRoute
-						isLoggedIn={this.props.needLogin}
+						isLoggedIn={this.props.token}
 						path='/tv-shows'
 						component={TvShows}
 					/>
 					<Route path='/sign-up' component={Signup} />
 					<Route path='/login' component={Login} />
+					<Route path='/demo' component={Demo} />
 				</Switch>
 			</BrowserRouter>
 		);
@@ -70,7 +73,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		needLogin: !state.auth.token,
+		token: state.auth.token,
 	};
 };
 

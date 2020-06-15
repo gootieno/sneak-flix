@@ -48,7 +48,6 @@ export default class LandingPage extends Component {
 			pathname: '/sign-up',
 			state: { email: this.state.email },
 		});
-		console.log(this.state);
 	};
 
 	render() {
@@ -62,7 +61,7 @@ export default class LandingPage extends Component {
 							</a>
 						</span>
 						<div>
-							<a href='/'>
+							<a href='/demo'>
 								<button className='header-container__demo'>Demo</button>
 							</a>
 							<a href='/login'>
@@ -106,7 +105,7 @@ export default class LandingPage extends Component {
 							href='https://www.linkedin.com/in/geoffrey-otieno-57015966/'
 							className='footer-link-linkedIn'
 						>
-							Can I contant the developer in LinkedIn?
+							Can I contant the developer on LinkedIn?
 						</a>
 					</footer>
 				</div>
