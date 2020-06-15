@@ -18,21 +18,21 @@ export const tvShowReducer = (state = {}, action) => {
 
 //selector functions
 export const getActionShows = (state) => {
-	let shows = Object.values(state.entities.shows).filter(
+	let shows = Object.values(state.shows).filter(
 		(show) => show.genre === 'action'
 	);
 	return shows;
 };
 
 export const getComedyShows = (state) => {
-	let shows = Object.values(state.entities.shows).filter(
+	let shows = Object.values(state.shows).filter(
 		(show) => show.genre === 'comedy'
 	);
 	return shows;
 };
 
 export const getDramaShows = (state) => {
-	let shows = Object.values(state.entities.shows).filter(
+	let shows = Object.values(state.shows).filter(
 		(show) => show.genre === 'drama'
 	);
 	return shows;

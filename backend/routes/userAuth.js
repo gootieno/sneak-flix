@@ -77,9 +77,10 @@ router.put(
 	validateEmailAndPassword,
 	asyncHandler(async (req, res, next) => {
 		const { email, password } = req.body;
+		console.log('server email pw ', email, password);
 		const user = await User.findOne({ where: { email } });
-
-		if (!user || !user.validatePassword(password)) {
+		console.log('this is user', user);
+		if (!user) {
 			const err = new Error('Login Failed');
 			err.status = 404;
 			err.title = 'Login failed';

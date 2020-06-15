@@ -22,7 +22,7 @@ class Movies extends Component {
 
 const mapStateToProps = (state, ownProps) => {
 	return {
-		movies: () => Object.values(state.entities.movies),
+		movies: () => Object.values(state.movies),
 	};
 };
 

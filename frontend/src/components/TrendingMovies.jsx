@@ -40,7 +40,7 @@ class Trending extends Component {
 }
 
 const mapStateToProps = (state) => ({
-	movies: Object.values(state.entities.movies),
+	movies: Object.values(state.movies),
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -14,7 +14,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(aws);
 app.use('/movies', movieRouter);
-app.use('/', userAuthRouter);
+app.use('/user', userAuthRouter);
 
 app.use((req, res, next) => {
 	const err = new Error("The requested page couldn't be found.");
