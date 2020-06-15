@@ -19,9 +19,6 @@ export default function NavBar() {
 				<NavLink className='navbar-container__navs' to='/movies'>
 					Movies
 				</NavLink>
-				<NavLink className='navbar-container__navs' to='/my-list'>
-					My List
-				</NavLink>
 			</nav>
 			<div className='navbar-container__right-search-profile'>
 				{/* <span className='navbar-container__search'>

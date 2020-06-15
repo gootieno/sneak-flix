@@ -2,24 +2,36 @@ import React, { Component } from 'react';
 import logo from '../images/Sneakflix.png';
 import { connect } from 'react-redux';
 import { actions } from '../store/reducers/auth';
+import { signup } from '../store/reducers/auth';
 
 export class Signup extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			email: '',
 			password: '',
 		};
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
 	onChange = (e) => {
 		const { name, value } = e.target;
 		this.setState({ [name]: value });
 	};
-
-	onSubmit = (e) => {
-		e.preventDefault();
+	updateEmail = (e) => {
+		this.setState({ email: e.target.value });
 	};
+
+	updatePassword = (e) => {
+		this.setState({ password: e.target.value });
+	};
+
+	async handleSubmit(e) {
+		e.preventDefault();
+		this.props.signup(this.state.email, this.state.password);
+	}
 	render() {
+		console.log(this.state);
 		return (
 			// <EmailContent.Consumer>
 
@@ -36,13 +48,14 @@ export class Signup extends Component {
 					<p>This is the only form page! We hate long forms too!</p>
 					<input
 						type='email'
-						onChange={this.props.updateEmail}
+						onChange={this.updateEmail}
+						value={this.state.email}
 						placeholder='example@email.com'
 					/>
 					<input
 						type='password'
-						onChange={this.props.updatePassword}
-						value={this.props.password}
+						onChange={this.updatePassword}
+						value={this.state.password}
 						placeholder='password'
 					/>
 					<button
@@ -68,9 +81,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		updateEmail: (event) => dispatch(actions.updateEmail(event.target.value)),
-		updatePassword: (event) =>
-			dispatch(actions.updatePassword(event.target.value)),
+		signup: (email, password) => dispatch(signup(email, password)),
 	};
 };
 
