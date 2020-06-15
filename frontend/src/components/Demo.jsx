@@ -16,7 +16,7 @@ export class Demo extends Component {
 
 	async handleSubmit(e) {
 		e.preventDefault();
-		this.props.login(this.state.email, this.state.password);
+		this.props.login(this.state.demouser, this.state.password);
 	}
 
 	render() {
@@ -32,20 +32,13 @@ export class Demo extends Component {
 						</a>
 					</span>
 				</header>
-				<div className='login-card'>
+				<div id='login-card' className='login-card'>
 					<h2 id='sign-in'>Try a demo! Click Login!</h2>
 					<form className='body-container__login-form'>
-						<input
-							type='email'
-							defaultValue='demo@example.com'
-							placeholder='example@email.com'
-						/>
-						<input
-							type='password'
-							defaultValue='Demouser1234!'
-							placeholder='password'
-						/>
+						<input type='email' defaultValue={this.state.demouser} />
+						<input type='password' defaultValue={this.state.password} />
 						<button
+							id='demo-button'
 							onClick={this.handleSubmit}
 							className='body-container__sign-up'
 						>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../images/Sneakflix.png';
+import Logout from './Logout';
 
 export default function NavBar() {
 	return (
@@ -28,7 +29,11 @@ export default function NavBar() {
 				<span className='navbar-container__search'>
 					<input />
 				</span>
-				<span>profile here</span>
+				<span>
+					<a>
+						<Logout />
+					</a>
+				</span>
 			</div>
 		</div>
 	);

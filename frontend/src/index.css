@@ -44,6 +44,24 @@ a {
 	color: red;
 	background-color: rgb(20, 20, 20);
 }
+
+#logout {
+	transition-duration: 0.4s;
+	border: 2px solid red;
+	padding: 5px 35px 7px;
+	border-radius: 5px;
+	line-height: 22px;
+	font-size: 14px;
+	color: red;
+	background-color: rgb(20, 20, 20);
+}
+
+#logout:hover {
+	background-color: red;
+	border: 2px solid black;
+	color: black;
+}
+
 .header-container__login:hover {
 	background-color: red;
 	border: 2px solid black;
@@ -303,4 +321,12 @@ h3 {
 
 button {
 	color: black;
+}
+
+button#demo-button {
+	margin-top: 50px;
+}
+
+div#login-card {
+	padding-bottom: 5px;
 }

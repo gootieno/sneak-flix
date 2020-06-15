@@ -27,7 +27,6 @@ class Login extends Component {
 	};
 
 	render() {
-	
 		if (this.props.token) {
 			return <Redirect to='/browse' />;
 		}
@@ -57,6 +56,7 @@ class Login extends Component {
 							placeholder='password'
 						/>
 						<button
+							id='demo-button'
 							onClick={this.handleSubmit}
 							className='body-container__sign-up'
 						>

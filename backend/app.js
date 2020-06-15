@@ -43,7 +43,7 @@ app.use((err, req, res, next) => {
 
 app.use((err, req, res, next) => {
 	res.status(err.status || 500);
-	const isProduction = process.env.NODE_ENV === 'production';
+	const isProduction = environment === 'production';
 	res.json({
 		title: 'Server Error',
 		message: isProduction ? null : err.message,
