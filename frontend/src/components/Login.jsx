@@ -13,6 +13,8 @@ class Login extends Component {
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
+	
+	//Throw errors here
 	async handleSubmit(e) {
 		e.preventDefault();
 		this.props.login(this.state.email, this.state.password);

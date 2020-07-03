@@ -1,34 +1,6 @@
 import React, { Component } from 'react';
 import logo from '../images/Sneakflix.png';
 import EmailContext from './EmailContext';
-// import Signup from './Signup';
-//only data needed is email address for try it now
-// should render the landingpageheader, landingpagebody, landingpagebottom
-
-// class EmailForm extends Component {
-// 	constructor() {
-// 		super();
-// 		this.state = {
-// 			email: '',
-// 		};
-// 	}
-// 	onChange = (e) => {
-// 		this.setState({ email: e.target.value });
-// 	};
-
-// 	render() {
-// 		return (
-// 			<form className='body-container__signup-form'>
-// 				<input
-// 					onChange={this.onChange}
-// 					type='email'
-// 					value={this.props.email}
-// 					placeholder='example@email.com'
-// 				/>
-// 			</form>
-// 		);
-// 	}
-// }
 
 export default class LandingPage extends Component {
 	constructor() {
@@ -71,7 +43,7 @@ export default class LandingPage extends Component {
 					</header>
 					<div className='body-container'>
 						<h1 className='body-container__title'>
-							A sneak peak of upcoming movies
+							Take a sneak peak of movies
 						</h1>
 						<h5 className='body-container__signup-message'>
 							Watch anytime. No subscription needed
