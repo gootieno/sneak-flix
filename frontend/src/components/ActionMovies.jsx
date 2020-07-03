@@ -36,7 +36,7 @@ class ActionMovies extends Component {
 				totalSlides={1.48}
 			>
 				<Slider>
-					<span className='playlist-container'>
+					<div className='playlist-container'>
 						{this.props.movies.map((movie, idx) => (
 							<Slide index={idx}>
 								<video
@@ -54,7 +54,7 @@ class ActionMovies extends Component {
 								</video>
 							</Slide>
 						))}
-					</span>
+					</div>
 				</Slider>
 				<div className='button-slider'>
 					<ButtonBack className='button-left'>Back</ButtonBack>

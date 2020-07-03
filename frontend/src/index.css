@@ -372,3 +372,11 @@ div#login-card {
 .playlist-grid {
 	padding-bottom: 80px;
 }
+
+.videos {
+	overflow: hidden;
+}
+
+.videos:hover {
+	overflow: hidden;
+}
