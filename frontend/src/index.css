@@ -270,13 +270,6 @@ img.playlist-container__box {
 	width: 100px;
 }
 
-div.playlist-container div {
-	overflow: auto;
-	display: inline-block;
-	color: blue;
-	padding-right: 5px;
-}
-
 .active {
 	font-weight: bold;
 }
@@ -287,16 +280,12 @@ div.playlist-container div {
 	justify-content: center;
 }
 
-.playlist-container__video {
+.playlist-video {
 	flex: 0 0 19.7%;
 	text-align: center;
 	object-fit: cover;
 	margin: 0 2px;
 	transition: transform 300ms ease 100ms;
-}
-
-.playlist-container__video:hover {
-	transform: scale(1.2) !important;
 }
 
 .category-title {
@@ -369,14 +358,17 @@ div#login-card {
 	opacity: 1;
 }
 
-.playlist-grid {
-	padding-bottom: 80px;
+.playlist-video-container {
+	display: flex;
+	padding-top: 15px;
+	padding-left: 50px;
 }
 
-.videos {
-	overflow: hidden;
+.playlist-video-container__video:hover {
+	transform: scale(1.2) !important;
+	transition: transform 300ms ease 100ms;
 }
-
-.videos:hover {
-	overflow: hidden;
+.playlist-video-container__video {
+	display: flex;
+	justify-content: center;
 }
