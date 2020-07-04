@@ -33,22 +33,24 @@ class ComedyMovies extends Component {
 				totalSlides={1.28}
 			>
 				<Slider>
-					<span className='playlist-container'>
+					<span className='playlist-video-container'>
 						{this.props.movies.map((movie, idx) => (
 							<Slide index={idx}>
-								<video
-									muted={false}
-									onMouseOver={this.handleVideoMouseOver}
-									onMouseLeave={this.handleVideoMouseLeave}
-									poster={movie.image}
-									key={idx}
-									height='180'
-									width='350'
-									id={movie.id}
-									className='playlist-container__video'
-								>
-									<source type='video/mp4' src={movie.source} />
-								</video>
+								<div className='playlist-video-container__video'>
+									<video
+										muted={false}
+										onMouseOver={this.handleVideoMouseOver}
+										onMouseLeave={this.handleVideoMouseLeave}
+										poster={movie.image}
+										key={idx}
+										height='180'
+										width='350'
+										id={movie.id}
+										className='playlist-video'
+									>
+										<source type='video/mp4' src={movie.source} />
+									</video>
+								</div>
 							</Slide>
 						))}
 					</span>
