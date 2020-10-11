@@ -12,6 +12,7 @@ import Login from './components/Login';
 import { loadToken } from './store/reducers/auth';
 import ProtectedRoute from './components/ProtectedRoute';
 import Demo from './components/Demo';
+import LandingPageHooks from './components/LandingPageHooks';
 
 
 class App extends Component {
@@ -34,7 +35,7 @@ class App extends Component {
 		return (
 			<BrowserRouter>
 				<Switch>
-					<Route exact path='/' component={LandingPage} />
+					<Route exact path='/' component={LandingPageHooks} />
 					<ProtectedRoute
 						isLoggedIn={this.props.token}
 						path='/browse'
