@@ -1,27 +1,44 @@
 import React from 'react';
-import {TextField, Dialog, DialogTitle, Button} from '@material-ui/core';
+import {
+	TextField,
+	Dialog,
+	DialogTitle,
+	Button,
+	DialogContent,
+	DialogActions,
+} from '@material-ui/core';
 
 function LoginModal(props) {
 	return (
 		<div>
 			<Dialog
-				onClose={handleClose}
-				aria-labelledby='simple-dialog-title'
-				open={openLogin}
+				onClose={props.handleClose}
+				aria-labelledby='login-dialog-title'
+				open={props.open}
+				fullWidth
+				maxWidth='sm'
 			>
-				<DialogTitle id='simple-dialog-title'>Welcome Back!</DialogTitle>
+				<DialogTitle id='login-dialog-title'>Welcome Back!</DialogTitle>
 				<form>
-					<TextField
-						id='email'
-						label='standard'
-						value={props.handleLoginInfo}
-					/>
-					<TextField
-						id='password'
-						label='standard'
-						value={props.handleLoginInfo}
-					/>
-                    <Button onClick={props.handleSubmit}>Login</Button>
+					<DialogContent>
+						<TextField
+							name='email'
+							type='email'
+							placeholder='email'
+							value={props.email}
+							onChange={props.handleEmail}
+						/>
+						<TextField
+							name='password'
+							type='password'
+							placeholder='password'
+							value={props.password}
+							onChange={props.handlePassword}
+						/>
+						<DialogActions>
+							<Button onClick={props.submitLogin}>Login</Button>
+						</DialogActions>
+					</DialogContent>
 				</form>
 			</Dialog>
 		</div>
