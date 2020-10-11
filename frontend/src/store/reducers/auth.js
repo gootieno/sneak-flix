@@ -63,11 +63,11 @@ export const logout = () => async (dispatch, getState) => {
 	dispatch(removeToken());
 };
 
-const initialState = {
+const loginState = {
 	token: '',
 };
 
-export const authReducer = (state = initialState, action) => {
+export const authReducer = (state = loginState, action) => {
 	switch (action.type) {
 		case UPDATE_EMAIL: {
 			return {

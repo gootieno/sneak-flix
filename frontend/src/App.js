@@ -5,10 +5,8 @@ import './index.css';
 import 'font-awesome/css/font-awesome.css';
 import Browse from './components/Browse';
 import Movies from './components/Movies';
-
 import LandingPage from './components/LandingPage';
 import Signup from './components/Signup';
-import Login from './components/Login';
 import { loadToken } from './store/reducers/auth';
 import ProtectedRoute from './components/ProtectedRoute';
 import Demo from './components/Demo';
@@ -47,7 +45,6 @@ class App extends Component {
 						component={Movies}
 					/>
 					<Route path='/sign-up' component={Signup} />
-					<Route path='/login' component={Login} />
 					<Route path='/demo' component={Demo} />
 				</Switch>
 			</BrowserRouter>
