@@ -221,14 +221,14 @@ a.footer-link-git {
 a.footer-link-linkedIn {
 	text-align: center;
 	text-decoration: none;
-	padding-top: 20px;
+	padding-top: 20px
 }
 
 .navbar-container {
 	display: flex;
 	justify-content: space-between;
 	padding: 0px, 10px;
-	padding-bottom: 220px;
+	margin-bottom: 220px;
 }
 
 .navbar-container__left-links {

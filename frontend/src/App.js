@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import './index.css';
 import 'font-awesome/css/font-awesome.css';
 import Browse from './components/Browse';
-import Movies from './components/Movies';
+
 import LandingPage from './components/LandingPage';
 
 import { loadToken } from './store/reducers/auth';
@@ -38,11 +38,6 @@ class App extends Component {
 						isLoggedIn={this.props.token}
 						path='/browse'
 						component={Browse}
-					/>
-					<ProtectedRoute
-						isLoggedIn={this.props.token}
-						path='/movies'
-						component={Movies}
 					/>
 					<Route path='/demo' component={Demo} />
 				</Switch>
