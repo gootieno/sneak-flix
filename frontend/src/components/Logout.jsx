@@ -7,7 +7,7 @@ const Logout = (props) =>
 	props.loggedOut ? (
 		<Redirect to='/' />
 	) : (
-		<a href='/login'>
+		<a href='/'>
 			<button id='logout' onClick={props.logout}>
 				Logout
 			</button>

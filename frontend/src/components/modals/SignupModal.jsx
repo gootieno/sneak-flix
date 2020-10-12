@@ -21,21 +21,21 @@ function SignupModal(props) {
 				<DialogTitle id='login-dialog-title'>
 					Want an account? Sure!
 				</DialogTitle>
-				<form>
+				<form onSubmit={props.submitSignUp}>
 					<DialogContent>
 						<TextField
 							name='email'
 							type='email'
 							placeholder='email'
 							value={props.email}
-							onChange={props.handleEmail}
+							onChange={props.handleSignUp}
 						/>
 						<TextField
 							name='password'
 							type='password'
 							placeholder='password'
 							value={props.password}
-							onChange={props.handlePassword}
+							onChange={props.handleSignUp}
 						/>
 						<DialogActions>
 							<Button onClick={props.submitSignUp}>SignUP</Button>

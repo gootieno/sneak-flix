@@ -19,21 +19,21 @@ function LoginModal(props) {
 				maxWidth='sm'
 			>
 				<DialogTitle id='login-dialog-title'>Welcome Back!</DialogTitle>
-				<form>
+				<form onSubmit={props.submitLogin}>
 					<DialogContent>
 						<TextField
 							name='email'
 							type='email'
 							placeholder='email'
 							value={props.email}
-							onChange={props.handleEmail}
+							onChange={props.handleLogin}
 						/>
 						<TextField
 							name='password'
 							type='password'
 							placeholder='password'
 							value={props.password}
-							onChange={props.handlePassword}
+							onChange={props.handleLogin}
 						/>
 						<DialogActions>
 							<Button onClick={props.submitLogin}>Login</Button>
