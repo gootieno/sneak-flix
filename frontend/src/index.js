@@ -11,10 +11,10 @@ import 'font-awesome/css/font-awesome.css';
 const store = configureStore();
 
 ReactDOM.render(
-	<React.StrictMode>
+	<div>
 		<Provider store={store}>
 			<App />
 		</Provider>
-	</React.StrictMode>,
+	</div>,
 	document.getElementById('root')
 );

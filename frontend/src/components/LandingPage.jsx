@@ -64,20 +64,16 @@ function LandingPageHooks() {
 	const dispatch = useDispatch();
 	const token = useSelector((state) => state.auth.token);
 
-	const handleLoginEmail = (e) => {
-		setLoginInfo({ ...loginInfo, email: e.target.value });
+	const handleLogin = (e) => {
+		e.target.name === 'email'
+			? setLoginInfo({ ...loginInfo, email: e.target.value })
+			: setLoginInfo({ ...loginInfo, password: e.target.value });
 	};
 
-	const handleSignUpEmail = (e) => {
-		setSignUpInfo({ ...signUpInfo, email: e.target.value });
-	};
-
-	const handleSignUpPassword = (e) => {
-		setSignUpInfo({ ...signUpInfo, password: e.target.value });
-	};
-
-	const handleLoginPassword = (e) => {
-		setLoginInfo({ ...loginInfo, password: e.target.value });
+	const handleSignUp = (e) => {
+		e.target.name === 'email'
+			? setSignUpInfo({ ...loginInfo, email: e.target.value })
+			: setSignUpInfo({ ...loginInfo, password: e.target.value });
 	};
 
 	const handleLoginModal = () => {
@@ -92,6 +88,13 @@ function LandingPageHooks() {
 		e.preventDefault();
 		const email = loginInfo.email;
 		const password = loginInfo.password;
+		dispatch(login(email, password));
+	};
+
+	const handleDemoLogin = (e) => {
+		e.preventDefault();
+		const email = 'demouser@example.com';
+		const password = 'Password1';
 		dispatch(login(email, password));
 	};
 
@@ -134,16 +137,25 @@ function LandingPageHooks() {
 					</h5>
 					<p>Try a demo!</p>
 					<div className='form-container'>
-						<Button className={classes.demoButton}>TRY IT NOW</Button>
+						<Button onClick={handleDemoLogin} className={classes.demoButton}>
+							TRY IT NOW
+						</Button>
 					</div>
 				</div>
 			</section>
 			<footer className='footer-container'>
 				<h2 className='footer-container_faq'>Frequently Asked Questions</h2>
-				<a href='https://github.com/gootieno' className='footer-link-git'>
+				<a
+					target='_blank'
+					rel='noopener noreferrer'
+					href='https://github.com/gootieno'
+					className='footer-link-git'
+				>
 					Where can I see more of this developers work?
 				</a>
 				<a
+					target='_blank'
+					rel='noopener noreferrer'
 					href='https://www.linkedin.com/in/geoffrey-otieno-57015966/'
 					className='footer-link-linkedIn'
 				>
@@ -153,16 +165,14 @@ function LandingPageHooks() {
 			<LoginModal
 				handleClose={handleLoginModal}
 				open={openLogin}
-				handleEmail={handleLoginEmail}
-				handlePassword={handleLoginPassword}
+				handleLogin={handleLogin}
 				email={loginInfo.email}
 				password={loginInfo.password}
 				submitLogin={handleLoginSubmit}
 			/>
 			<SignupModal
-				handleEmail={handleSignUpEmail}
+				handleSignUp={handleSignUp}
 				email={signUpInfo.email}
-				handlePassword={handleSignUpPassword}
 				password={signUpInfo.password}
 				handleClose={handleSignUpModal}
 				open={openSignup}

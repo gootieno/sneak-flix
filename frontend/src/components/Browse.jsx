@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import NavBar from './NavBar';
-import MoviePlaylistGrid from './MoviePlaylistGrid';
+import ActionMovies from './ActionMovies';
 
-export default class Browse extends Component {
-	render() {
-		return (
-			<div>
-				<NavBar />
-				<MoviePlaylistGrid />
-			</div>
-		);
-	}
-}
+const Browse = () => (
+	<div>
+		<NavBar />
+		<ActionMovies />
+	</div>
+);
 
 //Map videos into each category
+export default Browse;
