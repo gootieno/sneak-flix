@@ -1,13 +1,10 @@
 import React, { useEffect } from 'react';
-import avengers from '../images/Avengers-age-of-ultron.jpg';
 import { connect } from 'react-redux';
 import { fetchMovies } from '../utils/apiUtil';
 import { getActionMovies, getMovieById } from '../store/reducers/movies';
-
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
 import { Image } from 'semantic-ui-react';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -18,36 +15,48 @@ const ActionMovies = (props) => {
 
 	const handleVideoMouseOver = (e) => {
 		console.log(e.target.id);
-		document.getElementById(e.target.id).controls = true;
-		e.target.muted = false;
-		e.target.play();
+		// document.getElementById(e.target.id).controls = true;
+		// e.target.muted = false;
+		// e.target.play();
+		e.target
+			? (e.target.className = classes.imageCover)
+			: (e.target.className = '');
 	};
 
 	const handleVideoMouseLeave = (e) => {
 		e.target.load();
-		document.getElementById(e.target.id).controls = false;
+		// document.getElementById(e.target.id).controls = false;
 	};
 
 	const useStyles = makeStyles({
-		imageCover: {
-			objectFit: 'cover',
+		sliderContainer: {
 			width: '100%',
+			height: '500px',
+		},
+
+		actionMoviesContainer: { marginLeft: '60px' },
+
+		actionMovieContainerTitle: {
+			marginLeft: '40px',
+		},
+
+		imageCover: {
+			width: '340px',
 			height: '100%',
-			marginRight: '15px',
+			paddingRight: '35px',
+			'&:hover': {
+				transform: 'scale(1.2,1.1)',
+				transitionDuration: '1s',
+			},
+
 			// marginLeft: '60px',
 		},
 		videoContainer: {
 			width: '280px',
 			height: 'auto',
-			display: 'flex',
-			// '&:hover': {
-			// 	transform: 'scale(1.5, 1.5)',
-			// 	transition: '1s',
-			// },
 		},
 		playlistGrid: {
-			marginLeft: '60px',
-			// display: 'flex',
+			marginLeft: '20px',
 		},
 	});
 
@@ -71,7 +80,7 @@ const ActionMovies = (props) => {
 	const classes = useStyles();
 
 	const settings = {
-		slidesToShow: 5,
+		slidesToShow: 4,
 		slidesToScroll: 1,
 		draggable: false,
 		fade: false,
@@ -79,18 +88,22 @@ const ActionMovies = (props) => {
 	};
 
 	return (
-		<Slider {...settings} className={classes.playlistGrid}>
-			<div className={classes.videoContainer}>
-				{images.map((item, i) => (
-					<Image
-						key={i * 2}
-						src={item}
-						alt={i}
-						className={classes.imageCover}
-					/>
-				))}
-			</div>
-		</Slider>
+		<div className={classes.actionMoviesContainer}>
+			<h2 className={classes.actionMovieContainerTitle}>Action Movies</h2>
+			<div className={classes.sliderContainer}>
+				<Slider {...settings} className={classes.playlistGrid}>
+					{images.map((item, i) => (
+						<Image
+							key={i * 2}
+							src={item}
+							alt={i}
+							className={classes.imageCover}
+							onMouseOver={handleVideoMouseOver}
+						/>
+					))}
+				</Slider>
+			</div>{' '}
+		</div>
 	);
 };
 
