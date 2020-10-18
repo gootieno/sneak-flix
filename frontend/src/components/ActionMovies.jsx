@@ -34,19 +34,22 @@ const ActionMovies = (props) => {
 			height: '500px',
 		},
 
-		actionMoviesContainer: { marginLeft: '60px' },
+		actionMoviesContainer: { marginLeft: '30px' },
 
 		actionMovieContainerTitle: {
-			marginLeft: '40px',
+			marginLeft: '60px',
+			marginBottom: '0px',
 		},
 
 		imageCover: {
 			width: '340px',
 			height: '100%',
-			paddingRight: '35px',
+			paddingRight: '5px',
+			padding: '30px 0px 30px 30px',
+			objectFit: 'cover',
 			'&:hover': {
-				transform: 'scale(1.2,1.1)',
-				transitionDuration: '1s',
+				transform: 'scale(1.1,1.1)',
+				transitionDuration: '.8s',
 			},
 
 			// marginLeft: '60px',
@@ -80,10 +83,11 @@ const ActionMovies = (props) => {
 	const classes = useStyles();
 
 	const settings = {
-		slidesToShow: 4,
+		slidesToShow: 5,
 		slidesToScroll: 1,
 		draggable: false,
 		fade: false,
+		adaptiveHeight: true,
 		// arrows: true,
 	};
 
@@ -102,7 +106,7 @@ const ActionMovies = (props) => {
 						/>
 					))}
 				</Slider>
-			</div>{' '}
+			</div>
 		</div>
 	);
 };
