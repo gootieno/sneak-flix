@@ -11,6 +11,11 @@ body {
 	);
 }
 
+.slick-slide {
+	height: '100%';
+	width: '100%';
+}
+
 a {
 	color: white;
 	text-decoration: none;
@@ -221,7 +226,7 @@ a.footer-link-git {
 a.footer-link-linkedIn {
 	text-align: center;
 	text-decoration: none;
-	padding-top: 20px
+	padding-top: 20px;
 }
 
 .navbar-container {
