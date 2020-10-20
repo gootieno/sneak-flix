@@ -9,11 +9,7 @@ body {
 		rgba(0, 0, 0, 1) 86%,
 		rgba(0, 0, 0, 1) 100%
 	);
-}
-
-.slick-slide {
-	height: '100%';
-	width: '100%';
+	/* overflow-x: hidden; */
 }
 
 a {
