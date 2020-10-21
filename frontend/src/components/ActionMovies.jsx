@@ -9,9 +9,14 @@ import { Image } from 'semantic-ui-react';
 import { makeStyles } from '@material-ui/core/styles';
 
 const ActionMovies = (props) => {
-	// useEffect(() => {
-	// 	props.fetchMovies();
-	// }, []);
+	useEffect(() => {
+		let arrowButtons = document.getElementsByClassName('slick-arrow');
+		for (let i = 0; i < arrowButtons.length; i++) {
+			arrowButtons[i].classList.add('arrowButtons');
+		}
+		//TODO: fetch
+		// props.fetchMovies();
+	}, []);
 
 	const handleVideoMouseOver = (e) => {
 		console.log(e.target.id);
@@ -32,14 +37,18 @@ const ActionMovies = (props) => {
 		actionMoviesContainer: { marginLeft: '30px', marginRight: '30px' },
 
 		actionMovieContainerTitle: {
-			marginLeft: '60px',
+			marginLeft: '90px',
 			marginBottom: '0px',
+		},
+
+		arrowButtons: {
+			paddingLeft: '30px',
 		},
 
 		imageCover: {
 			width: '340px',
 			height: '100%',
-			padding: '30px 20px 30px 20px',
+			padding: '30px 20px',
 			objectFit: 'cover',
 			'&:hover': {
 				transform: 'scale(1.1,1.1)',
@@ -51,8 +60,10 @@ const ActionMovies = (props) => {
 			height: 'auto',
 		},
 		playlistGrid: {
-			marginLeft: '20px',
-			marginRight: '20px',
+			marginLeft: '30px',
+			marginRight: '30px',
+			paddingLeft: '10px',
+			paddingRight: '10px',
 		},
 	});
 
@@ -61,7 +72,6 @@ const ActionMovies = (props) => {
 		'https://images.unsplash.com/photo-1549396535-c11d5c55b9df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
 		'https://images.unsplash.com/photo-1550133730-695473e544be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
 		'https://images.unsplash.com/photo-1550167164-1b67c2be3973?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-		'https://images.unsplash.com/photo-1550338861-b7cfeaf8ffd8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
 		'https://images.unsplash.com/photo-1550223640-23097fc71cb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
 		'https://images.unsplash.com/photo-1550353175-a3611868086b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
 		'https://images.unsplash.com/photo-1550330039-a54e15ed9d33?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
@@ -82,6 +92,7 @@ const ActionMovies = (props) => {
 		fade: false,
 		adaptiveHeight: true,
 		arrows: true,
+		infinte: false,
 	};
 
 	return (

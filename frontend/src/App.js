@@ -9,7 +9,6 @@ import LandingPage from './components/LandingPage';
 
 import { loadToken } from './store/reducers/auth';
 import ProtectedRoute from './components/ProtectedRoute';
-import Demo from './components/Demo';
 
 
 
@@ -39,7 +38,6 @@ class App extends Component {
 						path='/browse'
 						component={Browse}
 					/>
-					<Route path='/demo' component={Demo} />
 				</Switch>
 			</BrowserRouter>
 		);
